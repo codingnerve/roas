@@ -346,6 +346,74 @@ export default function GsapInitializer() {
       });
     }
 
+    // 7.55. Services Portfolio - pinned image/card stack on desktop
+    const servicesSection = document.querySelector(".services-portfolio-section");
+    const servicesPin = document.querySelector(".services-stack-pin");
+    const servicesStack = document.querySelector(".services-card-stack");
+    const servicesCards = gsap.utils.toArray<HTMLElement>(".services-scroll-card");
+
+    if (servicesSection && servicesPin && servicesStack && servicesCards.length > 1) {
+      ScrollTrigger.matchMedia({
+        "(min-width: 1024px)": () => {
+          gsap.set(servicesCards, {
+            position: "absolute",
+            inset: 0,
+            autoAlpha: 0,
+            yPercent: 18,
+            scale: 0.94,
+            zIndex: (index) => index + 1,
+          });
+
+          gsap.set(servicesCards[0], {
+            autoAlpha: 1,
+            yPercent: 0,
+            scale: 1,
+          });
+
+          const timeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: servicesSection,
+              start: "top top",
+              end: () => `+=${window.innerHeight * (servicesCards.length - 1)}`,
+              scrub: 0.85,
+              pin: servicesPin,
+              anticipatePin: 1,
+              invalidateOnRefresh: true,
+            },
+          });
+
+          servicesCards.forEach((card, index) => {
+            if (index === 0) return;
+
+            timeline
+              .to(servicesCards[index - 1], {
+                yPercent: -10,
+                scale: 0.92,
+                autoAlpha: 0.35,
+                duration: 0.45,
+                ease: "power1.inOut",
+              })
+              .to(
+                card,
+                {
+                  yPercent: 0,
+                  scale: 1,
+                  autoAlpha: 1,
+                  duration: 0.55,
+                  ease: "power1.inOut",
+                },
+                "<"
+              );
+          });
+
+          return () => {
+            timeline.kill();
+            gsap.set(servicesCards, { clearProps: "all" });
+          };
+        },
+      });
+    }
+
     // 7.6. Process Cards — scroll-scrubbed right-to-left entrance (same as service rows)
     const processCards = document.querySelectorAll(".process-card-entrance");
     if (processCards.length > 0) {

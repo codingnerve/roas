@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Header from "./components/Header";
 import FaqAccordion from "./components/FaqAccordion";
-import RoiCalculator from "./components/RoiCalculator";
 
 export default function Home() {
   return (
@@ -161,173 +161,400 @@ export default function Home() {
         </section>
 
         {/* =========================================================================
-            3. SERVICES SECTION (Dark Editorial Row Layout)
+            3. SERVICES SECTION (Sticky Portfolio Card Stack)
             ========================================================================= */}
-        <section className="bg-[#060907] relative overflow-hidden pt-24" id="services">
+        <section className="services-portfolio-section bg-[#060907] relative overflow-hidden py-24 md:py-32" id="services">
+          <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(ellipse_at_center,_#fff_1px,_transparent_1px)] bg-[size:26px_26px] pointer-events-none" />
+          <div className="absolute top-1/2 left-[48%] w-2 h-2 rounded-full bg-[#D7FF2F] shadow-[0_0_18px_rgba(215,255,47,0.65)] pointer-events-none" />
 
-          {/* Subtle dot-grid texture */}
-          <div className="absolute inset-0 opacity-[0.025] bg-[radial-gradient(ellipse_at_center,_#fff_1px,_transparent_1px)] bg-[size:28px_28px] pointer-events-none" />
-
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-
-            {/* Section Header — asymmetric left / right split */}
-            <div className="flex flex-col lg:flex-row justify-between items-start gap-10 pb-16 border-b border-white/[0.08]">
-              <div className="space-y-5">
-                <span className="flex items-center gap-2.5 text-[12px] font-heading font-black uppercase tracking-[0.18em] text-[#FF5B22]">
-                  <span className="w-2.5 h-2.5 bg-[#FF5B22] inline-block shrink-0" />
-                  WHAT WE DO
-                </span>
-                <h2 className="text-[58px] sm:text-[76px] md:text-[92px] font-black leading-[0.92] text-white uppercase tracking-tighter select-none">
-                  Services Built <br /> for Performance
-                </h2>
-              </div>
-              <p className="text-[16px] text-white/45 max-w-[340px] leading-relaxed font-body self-end lg:pb-3">
-                We build and scale paid campaigns on Meta, Google &amp; TikTok — obsessively engineered around your return on ad spend.
-              </p>
-            </div>
-
-            {/* Service Rows */}
-            {[
-              {
-                num: "01",
-                title: "Meta Ads",
-                desc: "Facebook & Instagram campaigns built to convert. From prospecting to retargeting — we manage the full funnel with precision.",
-                tags: ["Full-Funnel", "Facebook", "Instagram", "Retargeting"],
-                image: "/project_one.png",
-                bgAccent: "#F5C842",
-                rotate: -6,
-              },
-              {
-                num: "02",
-                title: "Google Ads",
-                desc: "Search, Shopping, and Performance Max campaigns that capture demand and drive qualified traffic directly to your offer.",
-                tags: ["Search", "Shopping", "PMax", "Conquesting"],
-                image: "/hero_cover.png",
-                bgAccent: "#4287F5",
-                rotate: 6,
-              },
-              {
-                num: "03",
-                title: "TikTok Ads",
-                desc: "Creative-first campaigns on the fastest growing ad platform. We test, learn, and scale what works — fast.",
-                tags: ["UGC", "Spark Ads", "Catalog Feeds", "Trend Testing"],
-                image: "/project_two.png",
-                bgAccent: "#8B5CF6",
-                rotate: -6,
-              },
-              {
-                num: "04",
-                title: "Ad Account Audits",
-                desc: "Already running ads? We'll deep-dive your account, identify what's killing your ROAS, and give you a clear action plan.",
-                tags: ["Bid Strategy", "Creative Fatigue", "Attribution"],
-                image: "/project_one.png",
-                bgAccent: "#FF5B22",
-                rotate: 6,
-              },
-              {
-                num: "05",
-                title: "Strategy & Consulting",
-                desc: "Not sure where to start? We'll map out the right platforms, budget allocation, and funnel strategy for your business.",
-                tags: ["Roadmapping", "Budget Split", "Unit Economics"],
-                image: "/hero_cover.png",
-                bgAccent: "#00C475",
-                rotate: -6,
-              },
-              {
-                num: "06",
-                title: "Performance Reporting",
-                desc: "Clear, transparent reporting that tracks what matters — ROAS, CPA, revenue. No fluff, just numbers that tell the truth.",
-                tags: ["Looker Studio", "LTV Tracking", "Weekly Briefs"],
-                image: "/project_two.png",
-                bgAccent: "#F59E0B",
-                rotate: 6,
-              },
-            ].map((service, index) => (
-              <div
-                key={index}
-                className="service-row-dark border-b border-white/[0.07] py-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center"
-              >
-                {/* Left / Right: Tilted Image (alternates side each row) */}
-                <div className={`lg:col-span-5 flex items-center justify-center ${index % 2 !== 0 ? "lg:order-2" : ""}`}>
-                  <div
-                    className="service-tilted-img-wrap relative w-full max-w-[380px] aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl"
-                    data-rotate={service.rotate}
-                  >
-                    {/* Colored backdrop */}
-                    <div
-                      className="absolute inset-0"
-                      style={{ backgroundColor: service.bgAccent }}
-                    />
-                    {/* Image overlay with blend */}
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-55"
-                    />
-                    {/* Number watermark */}
-                    <span className="absolute bottom-4 right-5 text-[80px] font-black text-white/10 leading-none select-none font-heading">
-                      {service.num}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content Pillar */}
-                <div className={`lg:col-span-7 space-y-5 ${index % 2 !== 0 ? "lg:order-1" : ""}`}>
-                  <span className="block text-[11px] font-heading font-black uppercase tracking-[0.22em] text-white/25">
-                    {service.num}
+          <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start">
+              <div className="lg:col-span-5 lg:sticky lg:top-28">
+                <div className="flex items-center gap-3 mb-7">
+                  <span className="text-[28px] leading-none text-white/70">*</span>
+                  <span className="text-[18px] font-heading font-black text-white">
+                    03. Services
                   </span>
-                  <h3 className="text-[38px] md:text-[50px] font-black text-white leading-none tracking-tight">
-                    {service.title}
-                  </h3>
-                  <p className="text-[15px] text-white/55 leading-relaxed font-body max-w-[480px]">
-                    {service.desc}
-                  </p>
+                  <span className="h-px flex-1 max-w-[170px] bg-white/25" />
+                </div>
 
-                  {/* Pill Tags */}
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    {service.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="service-pill-tag px-4 py-1.5 rounded-full border border-white/[0.12] text-[12px] font-heading font-bold text-white/60"
-                        style={{ "--pill-accent": service.bgAccent } as React.CSSProperties}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <h2 className="text-[52px] sm:text-[66px] md:text-[76px] font-black leading-[0.96] text-white tracking-tight select-none">
+                  We build growth systems across paid channels
+                </h2>
 
-                  {/* Circular CTA + label */}
-                  <div className="flex items-center gap-4 pt-3">
-                    <a
-                      href="#contact"
-                      className="service-circle-cta group w-[54px] h-[54px] rounded-full border border-white/20 flex items-center justify-center text-white shrink-0"
-                      style={{ "--cta-accent": service.bgAccent } as React.CSSProperties}
+                <p className="mt-8 text-[17px] text-white/55 max-w-[500px] leading-relaxed font-body">
+                  Our services cover the full performance engine — from high converting social campaigns and search capture to sharp audits, strategy, and reporting.
+                </p>
+
+                <a href="#contact" className="services-more-btn mt-10 inline-flex items-center overflow-hidden rounded-lg bg-white text-[#080E0B] font-heading font-black text-[14px]">
+                  <span className="w-12 h-12 bg-[#1B1D1B] text-white flex items-center justify-center">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.4} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                  <span className="px-4">More Services</span>
+                </a>
+              </div>
+
+              <div className="services-stack-pin lg:col-span-7">
+                <div className="services-card-stack space-y-10 lg:space-y-0">
+                  {[
+                    {
+                      num: "01",
+                      title: "Meta Ads",
+                      badge: "Meta + Instagram",
+                      desc: "Facebook and Instagram campaigns built to convert, from prospecting to retargeting.",
+                      tags: ["Full-Funnel", "Retargeting", "Creative Testing"],
+                      image: "/project_two.png",
+                    },
+                    {
+                      num: "02",
+                      title: "Google Ads",
+                      badge: "Search + PMax",
+                      desc: "Search, Shopping, and Performance Max campaigns that capture demand and qualified traffic.",
+                      tags: ["Search", "Shopping", "Conquesting"],
+                      image: "/hero_cover.png",
+                    },
+                    {
+                      num: "03",
+                      title: "TikTok Ads",
+                      badge: "Creative-First Scale",
+                      desc: "Fast-moving TikTok campaigns built around UGC, hooks, testing, and rapid iteration.",
+                      tags: ["UGC", "Spark Ads", "Trend Testing"],
+                      image: "/project_one.png",
+                    },
+                    {
+                      num: "04",
+                      title: "Ad Account Audits",
+                      badge: "ROAS Recovery",
+                      desc: "We identify what is killing your return and map the clearest path back to profitable scale.",
+                      tags: ["Bid Strategy", "Attribution", "Creative Fatigue"],
+                      image: "/project_two.png",
+                    },
+                    {
+                      num: "05",
+                      title: "Strategy & Consulting",
+                      badge: "Growth Roadmap",
+                      desc: "Platform selection, budget allocation, funnel strategy, and a practical plan for growth.",
+                      tags: ["Roadmapping", "Budget Split", "Unit Economics"],
+                      image: "/hero_cover.png",
+                    },
+                    {
+                      num: "06",
+                      title: "Performance Reporting",
+                      badge: "Revenue Clarity",
+                      desc: "Clear reporting around ROAS, CPA, revenue, and the decisions that move those numbers.",
+                      tags: ["Looker Studio", "LTV Tracking", "Weekly Briefs"],
+                      image: "/project_two.png",
+                    },
+                  ].map((service) => (
+                    <article
+                      key={service.num}
+                      className="services-portfolio-card services-scroll-card overflow-hidden"
                     >
-                      <svg
-                        className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 19L19 5M19 5H9M19 5V15" />
-                      </svg>
-                    </a>
-                    <span className="text-[12px] text-white/35 font-body uppercase tracking-wider">
-                      Get Started
-                    </span>
-                  </div>
+                      <div className="relative h-[260px] sm:h-[330px] overflow-hidden">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#060907]/75 via-[#060907]/10 to-transparent" />
+                        <div className="absolute top-5 right-5 rounded-full bg-[#1B1D1B]/90 backdrop-blur px-4 py-2 text-[13px] font-heading font-black text-white shadow-xl">
+                          {service.badge}
+                        </div>
+                        <span className="absolute bottom-5 left-6 text-[64px] font-heading font-black text-white/12 leading-none">
+                          {service.num}
+                        </span>
+                      </div>
+
+                      <div className="bg-[#1A1C1A] p-7 sm:p-9">
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5">
+                          <div>
+                            <h3 className="text-[30px] sm:text-[36px] font-heading font-black text-white leading-tight">
+                              {service.title}
+                            </h3>
+                            <p className="mt-3 text-[15px] text-white/50 leading-relaxed max-w-[440px]">
+                              {service.desc}
+                            </p>
+                          </div>
+
+                          <a href="#contact" className="services-read-btn shrink-0 rounded-lg border border-white/70 px-5 py-3 text-[13px] font-heading font-black text-white hover:bg-white hover:text-[#080E0B] transition-colors">
+                            Read More
+                          </a>
+                        </div>
+
+                        <div className="flex flex-wrap gap-2 mt-6">
+                          {service.tags.map((tag) => (
+                            <span key={tag} className="rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-[12px] font-heading font-bold text-white/55">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </article>
+                  ))}
                 </div>
               </div>
-            ))}
-
+            </div>
           </div>
 
-          {/* Bottom gradient transition: dark → light sage */}
-          <div className="h-28 w-full bg-gradient-to-b from-[#060907] to-[#F4F8F5] pointer-events-none mt-8" />
+          <div className="h-28 w-full bg-gradient-to-b from-[#060907] to-[#F4F8F5] pointer-events-none mt-10" />
         </section>
 
         {/* =========================================================================
-            4. PROCESS SECTION (Full-Width Horizontal Row List)
+            4. FEATURED WINS SECTION (Editorial Case Study Layout)
+            ========================================================================= */}
+        <section className="bg-[#F4F8F5] relative overflow-hidden py-24 md:py-32" id="featured-wins">
+          <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[720px]">
+            {/* Left editorial panel */}
+            <div className="relative lg:col-span-5 bg-[#0B3621] min-h-[560px] md:min-h-[680px] overflow-hidden flex flex-col justify-between px-8 sm:px-12 md:px-16 pt-32 pb-0">
+              <div className="absolute -top-28 left-1/2 -translate-x-1/2 w-[360px] h-[360px] md:w-[460px] md:h-[460px] rounded-full overflow-hidden border-[18px] border-[#F4F8F5]">
+                <Image
+                  src="/project_two.png"
+                  alt="Performance marketing analytics dashboard"
+                  fill
+                  sizes="(min-width: 768px) 460px, 360px"
+                  className="object-cover scale-110"
+                />
+              </div>
+
+              <div className="relative z-10 mt-28 md:mt-36">
+                <span className="block text-[13px] font-heading font-black uppercase tracking-[0.24em] text-[#00C475] mb-8">
+                  The winner is
+                </span>
+                <h2 className="bw-spilt-title-two text-[48px] sm:text-[64px] md:text-[76px] font-black leading-[0.9] uppercase text-white tracking-tight">
+                  Aurora <br /> Skins
+                </h2>
+                <p className="mt-8 max-w-sm text-[16px] leading-relaxed text-white/55 font-body">
+                  A skincare paid social relaunch engineered around cleaner creative testing, tighter retargeting, and profitable scale.
+                </p>
+              </div>
+
+              <div className="featured-platform-marquee relative z-10 -mx-8 sm:-mx-12 md:-mx-16 overflow-hidden bg-[#00C475] text-[#0B3621] py-7">
+                <div className="featured-platform-track">
+                  {[1, 2].map((group) => (
+                    <div key={group} className="featured-platform-group">
+                      {["Meta Ads", "Google Ads", "TikTok Ads", "Pinterest Ads", "ROAS Optimization"].map((platform) => (
+                        <div key={`${group}-${platform}`} className="featured-platform-item">
+                          <span className="font-heading font-black text-[22px] sm:text-[30px] uppercase tracking-normal text-[#0B3621]">
+                            {platform}
+                          </span>
+                          <span className="text-[28px] sm:text-[34px] leading-none text-white">✦</span>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right feature spread */}
+            <div className="relative lg:col-span-7 bg-[#F4F8F5] min-h-[640px] px-6 sm:px-10 md:px-16 lg:px-20 pt-16 md:pt-24 pb-20">
+              <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(ellipse_at_center,_var(--roas-black)_1px,_transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+
+              <div className="relative z-10">
+                <span className="text-[12px] font-heading font-black uppercase tracking-[0.18em] text-[#00C475]">
+                  Featured wins
+                </span>
+                <h2 className="bw-spilt-title-two mt-3 text-[70px] sm:text-[100px] md:text-[128px] lg:text-[144px] font-black leading-[0.82] text-[#080E0B] uppercase tracking-tighter select-none">
+                  Featured <br /> Projects
+                </h2>
+              </div>
+
+              <div className="relative z-10 grid grid-cols-1 xl:grid-cols-12 gap-10 xl:gap-12 items-end mt-16 md:mt-24">
+                <div className="xl:col-span-4 order-2 xl:order-1 space-y-5">
+                  <div>
+                    <h3 className="text-[14px] font-heading font-black uppercase tracking-[0.16em] text-[#080E0B]">
+                      Aurora Skins
+                    </h3>
+                    <p className="mt-5 text-[14px] italic tracking-[0.04em] text-[#3D4F46] font-body">
+                      &apos;4.8x ROAS Relaunch&apos; Campaign
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 pt-4">
+                    {[
+                      ["4.8x", "Blended ROAS"],
+                      ["38%", "CPA reduction"],
+                    ].map(([metric, label]) => (
+                      <div key={label} className="border-t border-[#0B3621]/15 pt-4">
+                        <span className="block text-[34px] font-heading font-black text-[#0B3621] leading-none">
+                          {metric}
+                        </span>
+                        <span className="block mt-2 text-[11px] font-heading font-bold uppercase tracking-wider text-[#3D4F46]/65">
+                          {label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="xl:col-span-8 order-1 xl:order-2">
+                  <div className="featured-project-frame relative aspect-[16/10] overflow-hidden bg-[#080E0B] shadow-2xl">
+                    <Image
+                      src="/project_two.png"
+                      alt="Performance marketing campaign dashboard"
+                      fill
+                      sizes="(min-width: 1280px) 48vw, 100vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#080E0B]/75 via-transparent to-transparent" />
+                    <span className="absolute bottom-5 right-6 text-[54px] md:text-[86px] font-heading font-black text-white/15 uppercase leading-none">
+                      ROAS
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================================
+            5. WHY CHOOSE US SECTION (Light Editorial + Vertical Marquee)
+            ========================================================================= */}
+        <section className="section-padding bg-[#F4F8F5] relative overflow-hidden" id="why-us">
+          <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(ellipse_at_center,_var(--roas-black)_1px,_transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+          <div className="absolute top-28 right-[9%] w-2 h-2 rounded-full bg-[#00C475] pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div className="max-w-xl mx-auto lg:ml-[28%] lg:mr-auto mb-16">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-[28px] leading-none text-[#00C475]">*</span>
+                <span className="text-[16px] font-heading font-black text-[#0B3621]">
+                  03. Why Choose Us?
+                </span>
+                <span className="h-px flex-1 bg-[#0B3621]/20" />
+              </div>
+              <h2 className="bw-spilt-title-two text-[44px] sm:text-[58px] md:text-[66px] font-black leading-[0.96] text-[#080E0B] tracking-tight">
+                We combine creative storytelling strategy
+              </h2>
+            </div>
+
+            <div className="why-us-grid grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+              <div className="lg:col-span-4 space-y-12 lg:space-y-16">
+                {[
+                  {
+                    num: "01",
+                    title: "Results-Driven Approach",
+                    desc: "We focus on strategies that do not just look good. They return.",
+                    icon: "M4 7h7v7H4z M13 10h7v10h-7z M7 16h4v4H7z",
+                  },
+                  {
+                    num: "02",
+                    title: "Customized Solutions",
+                    desc: "Every account is different. We tailor creative, budget, and funnel strategy.",
+                    icon: "M4 7h16 M7 7v10 M4 17h16 M15 7v10",
+                  },
+                  {
+                    num: "03",
+                    title: "Full-Services Team",
+                    desc: "From paid media to creative testing and reporting, the whole system is covered.",
+                    icon: "M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z M4 19c0-3 2-5 4-5s4 2 4 5 M12 19c0-3 2-5 4-5s4 2 4 5",
+                  },
+                ].map((item) => (
+                  <div key={item.num} className="why-card relative max-w-[330px] lg:ml-auto">
+                    <span className="why-card-number absolute -top-8 -right-5 text-[50px] font-heading font-black text-[#0B3621]/10 leading-none">
+                      {item.num}
+                    </span>
+                    <div className="flex items-start gap-5">
+                      <div className="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <path d={item.icon} />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-[17px] font-heading font-black leading-tight text-[#080E0B]">
+                          {item.title}
+                        </h3>
+                        <p className="mt-6 text-[15px] leading-relaxed text-[#3D4F46]/78">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="lg:col-span-4 order-first lg:order-none">
+                <div className="why-marquee mx-auto h-[560px] w-full max-w-[360px] overflow-hidden">
+                  <div className="grid grid-cols-2 gap-3 h-full w-full">
+                    {[0, 1].map((column) => (
+                      <div key={column} className="relative h-full min-w-0 overflow-hidden rounded-sm">
+                        <div className={column === 0 ? "why-image-track why-image-track-up" : "why-image-track why-image-track-down"}>
+                          {[
+                            "/project_two.png",
+                            "/hero_cover.png",
+                            "/project_one.png",
+                            "/project_two.png",
+                            "/hero_cover.png",
+                            "/project_one.png",
+                            "/project_two.png",
+                            "/hero_cover.png",
+                            "/project_one.png",
+                          ].map((src, index) => (
+                            <div key={`${column}-${index}`} className="why-image-tile overflow-hidden">
+                              <img
+                                src={src}
+                                alt="Performance marketing agency visual"
+                                className="h-full w-full object-cover"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4 space-y-12 lg:space-y-16">
+                {[
+                  {
+                    num: "04",
+                    title: "Transparent Communication",
+                    desc: "You are always in the loop with plain-English reporting and regular updates.",
+                    icon: "M4 5h16v10H8l-4 4V5z M9 9h6 M9 12h4",
+                  },
+                  {
+                    num: "05",
+                    title: "Affordable & Scalable",
+                    desc: "Whether you are starting up or scaling hard, we build media plans around margin.",
+                    icon: "M12 3v18 M7 8c0-2 2-3 5-3s5 1 5 3-2 3-5 3-5 1-5 3 2 3 5 3 5-1 5-3",
+                  },
+                  {
+                    num: "06",
+                    title: "Client-Centric Mindset",
+                    desc: "Your success is our mission. We treat your ad spend like it is our own.",
+                    icon: "M4 4h7v7H4z M13 4h7v7h-7z M4 13h7v7H4z M13 13h7v7h-7z",
+                  },
+                ].map((item) => (
+                  <div key={item.num} className="why-card relative max-w-[330px]">
+                    <span className="why-card-number absolute -top-8 -left-5 text-[50px] font-heading font-black text-[#0B3621]/10 leading-none">
+                      {item.num}
+                    </span>
+                    <div className="flex items-start gap-5">
+                      <div className="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <path d={item.icon} />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-[17px] font-heading font-black leading-tight text-[#080E0B]">
+                          {item.title}
+                        </h3>
+                        <p className="mt-6 text-[15px] leading-relaxed text-[#3D4F46]/78">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================================
+            6. PROCESS SECTION (Full-Width Horizontal Row List)
             ========================================================================= */}
         <section className="section-padding bg-[#F4F8F5] overflow-hidden" id="process">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -421,7 +648,72 @@ export default function Home() {
         </section>
 
         {/* =========================================================================
-            5. ABOUT SECTION (Sage White Theme)
+            7. QUALITY BANNER SECTION (Dark Capability Snapshot)
+            ========================================================================= */}
+        <section className="quality-banner-topography relative overflow-hidden bg-[#1E1F22] py-20 md:py-28">
+          <div className="absolute inset-0 bg-[#060907]/20" />
+          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+              <div className="lg:col-span-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B3A]" />
+                  <span className="text-[13px] font-heading font-black text-white">
+                    Corporate business theme
+                  </span>
+                </div>
+
+                <h2 className="text-[40px] sm:text-[52px] md:text-[60px] font-heading font-black leading-[1.05] tracking-normal text-white max-w-[640px]">
+                  We make the quality design &amp; developments
+                </h2>
+
+                <div className="mt-10 flex items-center gap-5">
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-[0_12px_28px_rgba(0,0,0,0.32)]">
+                    <Image
+                      src="/project_one.png"
+                      alt="John Smith profile"
+                      fill
+                      sizes="64px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-[30px] sm:text-[36px] leading-none font-heading font-black text-white">
+                      John Smith
+                    </p>
+                    <p className="mt-1 text-[13px] font-heading font-bold uppercase tracking-widest text-white/45">
+                      Creative Director
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-6 space-y-6">
+                {[
+                  ["Web design", "70%"],
+                  ["Web development", "46%"],
+                  ["Web application", "38%"],
+                ].map(([label, value]) => (
+                  <div key={label}>
+                    <div className="mb-2 flex items-center justify-between gap-4 text-[13px] font-heading font-black text-white">
+                      <span>{label}</span>
+                      <span>{value}</span>
+                    </div>
+                    <div className="h-3 rounded-full bg-white/10 overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-[#FF6740]"
+                        style={{ width: value }}
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================================
+            8. ABOUT SECTION (Sage White Theme)
             ========================================================================= */}
         <section className="section-padding bg-[#F4F8F5]" id="about">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -477,11 +769,11 @@ export default function Home() {
               
               {/* Circle 1 */}
               <div className="stats-circle stats-circle-entrance">
-                <span className="text-[13px] font-heading font-bold text-[#3D4F46]">
+                <span className="text-[16px] font-heading font-bold text-[#3D4F46]">
                   ROAS Average
                 </span>
                 <span
-                  className="text-[44px] font-heading font-black text-[#0B3621] mt-1"
+                  className="text-[64px] font-heading font-black text-[#0B3621] mt-2"
                   data-count-start="1"
                   data-count-target="4.8"
                   data-count-suffix="x"
@@ -493,11 +785,11 @@ export default function Home() {
 
               {/* Circle 2 */}
               <div className="stats-circle stats-circle-entrance">
-                <span className="text-[13px] font-heading font-bold text-[#3D4F46]">
+                <span className="text-[16px] font-heading font-bold text-[#3D4F46]">
                   Ad Spend Managed
                 </span>
                 <span
-                  className="text-[44px] font-heading font-black text-[#0B3621] mt-1"
+                  className="text-[64px] font-heading font-black text-[#0B3621] mt-2"
                   data-count-start="0"
                   data-count-target="15"
                   data-count-suffix="M+"
@@ -509,11 +801,11 @@ export default function Home() {
 
               {/* Circle 3 */}
               <div className="stats-circle stats-circle-entrance">
-                <span className="text-[13px] font-heading font-bold text-[#3D4F46]">
+                <span className="text-[16px] font-heading font-bold text-[#3D4F46]">
                   Client Profits
                 </span>
                 <span
-                  className="text-[44px] font-heading font-black text-[#0B3621] mt-1"
+                  className="text-[64px] font-heading font-black text-[#0B3621] mt-2"
                   data-count-start="10"
                   data-count-target="84"
                   data-count-suffix="M"
@@ -529,11 +821,129 @@ export default function Home() {
         </section>
 
         {/* =========================================================================
-            6. STANDALONE ROI INTERACTIVE CALCULATOR SECTION (Pure White Theme)
+            6. EXPERIENCE SECTION (Editorial Stats Layout)
             ========================================================================= */}
-        <section className="section-padding bg-white">
+        <section className="bg-[#F1F1F1] py-20 md:py-28 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <RoiCalculator />
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+              <div className="lg:col-span-5">
+                <div className="flex items-center gap-2 text-[14px] font-heading font-black text-black mb-20">
+                  <span className="w-3 h-3 border border-black/35 bg-black/10 shadow-[inset_0_0_0_2px_rgba(255,255,255,0.45)]" />
+                  <span>Experience</span>
+                  <span className="w-3 h-3 border border-black/35 bg-black/10 shadow-[inset_0_0_0_2px_rgba(255,255,255,0.45)]" />
+                </div>
+
+                <div className="relative h-[460px] sm:h-[560px] lg:h-[578px] rounded-[7px] overflow-hidden bg-[#8C918E]">
+                  <Image
+                    src="/project_one.png"
+                    alt="Immersive digital experience visual"
+                    fill
+                    sizes="(min-width: 1024px) 36vw, 100vw"
+                    className="object-cover grayscale contrast-125 brightness-75"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/25 via-transparent to-black/40" />
+                  <div className="absolute inset-x-14 top-[28%] h-6 rounded-full bg-white shadow-[0_0_34px_rgba(255,255,255,0.95)] rotate-[-14deg]" />
+                </div>
+              </div>
+
+              <div className="lg:col-span-7">
+                <div className="relative mb-16">
+                  <h2 className="text-[42px] sm:text-[56px] md:text-[64px] lg:text-[46px] xl:text-[58px] font-body font-medium leading-[1.02] tracking-normal text-black max-w-[760px]">
+                    User experience as a driving force in design today.
+                  </h2>
+                  <span className="absolute right-6 lg:right-16 -bottom-10 w-2 h-2 rounded-full bg-[#D7FF2F]" />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-3.5">
+                  <div className="md:col-span-12 rounded-[7px] bg-white px-8 py-9 md:px-10 md:py-10">
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                      <div className="md:col-span-4">
+                        <div className="flex items-start">
+                          <span className="text-[78px] md:text-[86px] leading-none font-body font-medium tracking-normal text-black">
+                            6k
+                          </span>
+                          <span className="text-[32px] leading-none text-black/25 font-heading font-black mt-2">+</span>
+                        </div>
+                      </div>
+
+                      <div className="md:col-span-8">
+                        <h3 className="text-[22px] font-body font-medium text-black tracking-normal">
+                          Happy customers
+                        </h3>
+                        <p className="mt-2 text-[16px] leading-relaxed text-[#4F5965] max-w-[520px]">
+                          We believe that the key to our success lies in understanding our clients.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 rounded-[5px] bg-[#F1F1F1] px-4 py-3.5 flex flex-col sm:flex-row sm:items-center gap-4">
+                      <div className="flex -space-x-2 shrink-0">
+                        {["MH", "AD", "SK", "JR", "TN"].map((name, index) => (
+                          <div
+                            key={name}
+                            className={[
+                              "w-9 h-9 rounded-full border-2 border-[#F1F1F1] flex items-center justify-center text-[10px] font-heading font-black text-white",
+                              ["bg-[#A47B5C]", "bg-[#080E0B]", "bg-[#00A361]", "bg-[#5B6470]", "bg-[#0B3621]"][index],
+                            ].join(" ")}
+                          >
+                            {name}
+                          </div>
+                        ))}
+                      </div>
+                      <p className="text-[16px] sm:text-[17px] text-black font-body sm:ml-20">
+                        Sustainable creativity, timeless appeal.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="md:col-span-8 rounded-[7px] bg-white p-7 md:p-8 min-h-[330px] relative overflow-hidden">
+                    <span className="text-[22px] text-black/25 font-body">Impressions</span>
+                    <span className="absolute top-4 right-6 text-[120px] md:text-[160px] leading-none font-heading font-black text-black/[0.035] select-none">
+                      N
+                    </span>
+
+                    <div className="absolute left-7 right-7 bottom-7 space-y-0 text-[15px] font-body text-black">
+                      {[
+                        ["Solutions", "100%", "100%", "bg-[#F2F2F2]"],
+                        ["Strategy", "90%", "90%", "bg-[#E2E2E2]"],
+                        ["UX/UI Design", "84%", "84%", "bg-black text-white"],
+                        ["Development", "70%", "70%", "bg-[#E9E9E9]"],
+                      ].map(([label, value, width, tone]) => (
+                        <div
+                          key={label}
+                          className={`${tone} h-[43px] rounded-[6px] px-5 flex items-center justify-between`}
+                          style={{ width }}
+                        >
+                          <span className={label === "UX/UI Design" ? "font-black" : ""}>{label}</span>
+                          <span className={label === "UX/UI Design" ? "font-black" : ""}>{value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="md:col-span-4 rounded-[7px] bg-black text-white min-h-[330px] p-7 flex flex-col justify-between overflow-hidden">
+                    <div className="relative h-28">
+                      <Image
+                        src="/hero_cover.png"
+                        alt="Completed digital projects preview"
+                        fill
+                        sizes="(min-width: 1024px) 20vw, 100vw"
+                        className="object-contain drop-shadow-[0_16px_30px_rgba(255,255,255,0.16)]"
+                      />
+                    </div>
+
+                    <div>
+                      <p className="text-[17px] leading-snug text-white/75 font-heading font-black max-w-[190px]">
+                        More than 1.2k+ projects completed
+                      </p>
+                      <div className="mt-8 text-[48px] md:text-[52px] leading-none font-body font-medium tracking-normal">
+                        0.3k+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -584,76 +994,81 @@ export default function Home() {
       </main>
 
       {/* =========================================================================
-          10. FOOTER BLOCK (Light Sage Theme)
+          10. FOOTER BLOCK (Bold Rounded Theme)
           ========================================================================= */}
-      <footer className="bg-[#F4F8F5] text-[#3D4F46] pt-24 pb-12 px-6 md:px-12 relative overflow-hidden border-t border-[#E1EBE5]">
-        
-        {/* Giant Watermark outline logo */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none overflow-hidden z-0">
-          <span className="footer-watermark text-[100px] sm:text-[180px] md:text-[240px] lg:text-[320px] font-heading font-black tracking-widest text-transparent -webkit-text-stroke-[2px] -webkit-text-stroke-color:rgba(11,54,33,0.04) inline-block">
-            ROAS HAUS
-          </span>
+      <footer className="bg-[#F4F8F5] text-white relative overflow-hidden pt-16 pb-10 px-5 md:px-10 border-t border-[#E1EBE5]">
+        <div className="relative max-w-7xl mx-auto pt-8 md:pt-16">
+          <h2 className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[18%] z-20 w-full text-center text-[54px] sm:text-[92px] md:text-[132px] lg:text-[170px] xl:text-[206px] font-heading font-black leading-none tracking-[-0.04em] text-[#060907] select-none pointer-events-none whitespace-nowrap">
+            THE ROAS HAUS
+          </h2>
+
+          <div className="relative z-10 rounded-[34px] md:rounded-[46px] bg-[#00C475] px-7 sm:px-10 md:px-16 lg:px-20 pt-32 sm:pt-40 md:pt-48 lg:pt-52 pb-10 md:pb-12 shadow-[0_30px_80px_rgba(0,196,117,0.18)] overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(255,255,255,0.22),transparent_34%),linear-gradient(135deg,rgba(11,54,33,0.16),transparent_45%)] pointer-events-none" />
+
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-10 items-start">
+              <div className="md:col-span-5 lg:col-span-5">
+                <h3 className="text-[42px] md:text-[48px] font-heading font-black leading-none tracking-tight text-white">
+                  Let's Talk
+                </h3>
+                <p className="mt-2 text-[14px] font-heading font-black uppercase tracking-wide text-white/90">
+                  Ready To Bring Your Returns To Life?
+                </p>
+
+                <div className="mt-8 space-y-2 font-heading font-black text-[17px] md:text-[19px] text-white">
+                  <a href="mailto:hello@theroashaus.com" className="block hover:text-[#0B3621] transition-colors">
+                    hello@theroashaus.com
+                  </a>
+                  <a href="tel:+121261670051" className="block hover:text-[#0B3621] transition-colors">
+                    (+121) 616700 51
+                  </a>
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-x-4 gap-y-2 text-[14px] font-heading font-black">
+                  <a href="#" className="hover:text-[#0B3621] transition-colors">Instagram</a>
+                  <a href="#" className="hover:text-[#0B3621] transition-colors">LinkedIn</a>
+                  <a href="#" className="hover:text-[#0B3621] transition-colors">Twitter</a>
+                </div>
+              </div>
+
+              <nav className="md:col-span-3 lg:col-span-3 grid gap-3 text-[16px] font-heading font-black">
+                <a href="#home" className="hover:text-[#0B3621] transition-colors">Home</a>
+                <a href="#services" className="hover:text-[#0B3621] transition-colors">Services</a>
+                <a href="#process" className="hover:text-[#0B3621] transition-colors">Process</a>
+                <a href="#about" className="hover:text-[#0B3621] transition-colors">About</a>
+                <a href="#faq" className="hover:text-[#0B3621] transition-colors">FAQ</a>
+                <a href="#contact" className="hover:text-[#0B3621] transition-colors">Contact Us</a>
+              </nav>
+
+              <div className="md:col-span-4 lg:col-span-4">
+                <p className="max-w-[340px] text-[16px] md:text-[17px] leading-snug font-heading font-black text-white">
+                  By subscribing you agree with our Privacy Policy
+                </p>
+
+                <form className="mt-10 flex items-center w-full max-w-[390px] rounded-full bg-[#0B3621]/12 p-2 pl-6">
+                  <input
+                    type="email"
+                    aria-label="Email address"
+                    placeholder="Enter Your Email"
+                    className="!w-full !p-0 !border-0 !bg-transparent !shadow-none text-white placeholder:text-white/75 font-heading font-black text-[14px] focus:!shadow-none"
+                  />
+                  <button
+                    type="submit"
+                    aria-label="Submit email"
+                    className="shrink-0 w-12 h-12 rounded-full bg-white text-[#060907] flex items-center justify-center hover:bg-[#0B3621] hover:text-white transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.4} d="M5 12l14-7-7 14-2-6-5-1z" />
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div className="relative z-10 mt-20 md:mt-24 text-center text-[13px] font-heading font-black text-white/90">
+              &copy; 2026 The Roas Haus. All Right Reserved
+            </div>
+          </div>
         </div>
-
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 relative z-10 border-b border-[#E1EBE5] pb-16">
-          
-          {/* Grid Widget 1: Description & contacts */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="text-[28px] font-heading font-black text-[#0B3621] uppercase">
-              ROAS HAUS<span className="text-[#00C475]">.</span>
-            </div>
-            
-            <p className="text-[16px] text-[#3D4F46]/80 font-body max-w-sm">
-              We Don't Run Ads. We Run Returns. Paid advertising built around absolute revenue growth.
-            </p>
-
-            <div className="space-y-1 font-body text-[15px] text-[#3D4F46]/90">
-              <p>Email: <a href="mailto:hello@theroashaus.com" className="text-[#00A361] hover:text-[#00C475] hover:underline font-bold">hello@theroashaus.com</a></p>
-              <p>Office: New York City, NY</p>
-            </div>
-          </div>
-
-          {/* Grid Widget 2: Site Links */}
-          <div className="lg:col-span-3 space-y-6">
-            <h4 className="text-[12px] font-heading font-black uppercase tracking-wider text-[#3D4F46]/50">
-              Navigation
-            </h4>
-            <div className="grid grid-cols-1 gap-3 font-body text-[15px] text-[#3D4F46]/80">
-              <a href="#services" className="footer-link hover:text-[#00C475] transition-colors">Services</a>
-              <a href="#process" className="footer-link hover:text-[#00C475] transition-colors">Process</a>
-              <a href="#about" className="footer-link hover:text-[#00C475] transition-colors">About</a>
-              <a href="#contact" className="footer-link hover:text-[#00C475] transition-colors">Contact</a>
-            </div>
-          </div>
-
-          {/* Grid Widget 3: Platforms list */}
-          <div className="lg:col-span-4 space-y-6">
-            <h4 className="text-[12px] font-heading font-black uppercase tracking-wider text-[#3D4F46]/50">
-              Paid Platforms We Scale
-            </h4>
-            <div className="flex flex-wrap gap-2 pt-2">
-              {["Meta Ads", "Google Search", "Google Shopping", "TikTok Business", "Performance Max", "Pinterest Ads"].map((plat) => (
-                <span
-                  key={plat}
-                  className="footer-platform-badge px-3.5 py-1.5 rounded-full bg-white border border-[#E1EBE5] text-[12px] font-heading font-bold text-[#3D4F46] shadow-sm hover:border-[#00C475] transition-all"
-                >
-                  {plat}
-                </span>
-              ))}
-            </div>
-          </div>
-
-        </div>
-
-        {/* Copyright bar */}
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center pt-8 relative z-10 text-[13px] text-[#3D4F46]/50 gap-4">
-          <p>&copy; 2025 The Roas Haus. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-[#00C475] transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-[#00C475] transition-colors">Terms of Service</a>
-          </div>
-        </div>
-
       </footer>
     </>
   );
