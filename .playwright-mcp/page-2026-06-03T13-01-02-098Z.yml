@@ -1,0 +1,517 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e9]:
+    - link "ROAS HAUS." [ref=e10]:
+      - /url: "#"
+    - navigation [ref=e11]:
+      - link "Home" [ref=e12]:
+        - /url: "#home"
+        - text: Home
+      - link "Services" [ref=e13]:
+        - /url: "#services"
+        - text: Services
+      - link "Process" [ref=e14]:
+        - /url: "#process"
+        - text: Process
+      - link "About" [ref=e15]:
+        - /url: "#about"
+        - text: About
+      - link "FAQ" [ref=e16]:
+        - /url: "#faq"
+        - text: FAQ
+    - generic [ref=e17]:
+      - link "Book a Free Audit Book a Free Audit" [ref=e18]:
+        - /url: "#contact"
+        - generic [ref=e19]:
+          - generic [ref=e20]: Book a Free Audit
+          - generic [ref=e21]: Book a Free Audit
+      - button "Open sidebar menu" [ref=e22]:
+        - img [ref=e23]
+  - generic [ref=e25]:
+    - generic [ref=e26]:
+      - generic [ref=e27]: ROAS HAUS.
+      - button "Close menu" [ref=e28]:
+        - img [ref=e29]
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - heading "Who We Are" [level=3] [ref=e33]
+        - paragraph [ref=e34]: We are a paid performance advertising agency built around one metric. We don't run generic impressions campaigns. We design and scale highly profitable returns on Meta, Google, and TikTok.
+      - generic [ref=e35]:
+        - heading "Get In Touch" [level=3] [ref=e36]
+        - generic [ref=e37]:
+          - paragraph [ref=e38]:
+            - generic [ref=e39]: "E:"
+            - text: hello@theroashaus.com
+          - paragraph [ref=e40]:
+            - generic [ref=e41]: "A:"
+            - text: 120 Performance Blvd, Suite 100, New York
+    - generic [ref=e42]:
+      - heading "Platforms We Scale" [level=3] [ref=e43]
+      - generic [ref=e44]:
+        - link "Meta" [ref=e45]:
+          - /url: "#"
+        - link "Google" [ref=e46]:
+          - /url: "#"
+        - link "TikTok" [ref=e47]:
+          - /url: "#"
+        - link "LinkedIn" [ref=e48]:
+          - /url: "#"
+      - generic [ref=e49]: © 2026 The Roas Haus. All rights reserved.
+  - main [ref=e50]:
+    - generic [ref=e51]:
+      - generic [ref=e55]:
+        - link "Facebook" [ref=e56]:
+          - /url: "#"
+        - link "Twitter" [ref=e57]:
+          - /url: "#"
+        - link "Linkedin" [ref=e58]:
+          - /url: "#"
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: FB
+            - generic [ref=e63]: GG
+            - generic [ref=e64]: TT
+          - generic [ref=e65]:
+            - generic [ref=e66]: Meta + Google + TikTok Certified
+            - generic [ref=e67]: Obsessively Focused on ROAS Multipliers
+        - generic [ref=e68]:
+          - link [ref=e69]:
+            - /url: "#contact"
+            - img [ref=e70]
+          - generic [ref=e72]:
+            - generic [ref=e73]: Audit Account
+            - paragraph [ref=e74]: Map out scaling metrics with our paid ads specialists.
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - generic [ref=e77]: Performance Advertising Agency
+          - heading "W e D o n ' t R u n A d s . W e R u n R e t u r n s ." [level=1] [ref=e492]:
+            - generic [ref=e493]:
+              - generic [ref=e494]: W
+              - generic [ref=e495]: e
+            - generic [ref=e496]:
+              - generic [ref=e497]: D
+              - generic [ref=e498]: o
+              - generic [ref=e499]: "n"
+              - generic [ref=e500]: "'"
+              - generic [ref=e501]: t
+            - generic [ref=e502]:
+              - generic [ref=e503]: R
+              - generic [ref=e504]: u
+              - generic [ref=e505]: "n"
+            - generic [ref=e506]:
+              - generic [ref=e507]: A
+              - generic [ref=e508]: d
+              - generic [ref=e509]: s
+              - generic [ref=e510]: .
+            - generic [ref=e511]:
+              - generic [ref=e512]: W
+              - generic [ref=e513]: e
+            - generic [ref=e514]:
+              - generic [ref=e515]: R
+              - generic [ref=e516]: u
+              - generic [ref=e517]: "n"
+            - generic [ref=e519]:
+              - generic [ref=e520]: R
+              - generic [ref=e521]: e
+              - generic [ref=e522]: t
+              - generic [ref=e523]: u
+              - generic [ref=e524]: r
+              - generic [ref=e525]: "n"
+              - generic [ref=e526]: s
+              - generic [ref=e527]: .
+        - paragraph [ref=e79]: The Roas Haus is a results-driven paid advertising agency. We build and scale campaigns on Meta, Google, and TikTok — obsessively focused on your ROAS.
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - link "Book a Free Audit Book a Free Audit" [ref=e82]:
+            - /url: "#contact"
+            - generic [ref=e83]:
+              - generic [ref=e84]: Book a Free Audit
+              - generic [ref=e85]: Book a Free Audit
+          - link "Our Services →" [ref=e86]:
+            - /url: "#services"
+            - text: Our Services
+            - generic [ref=e87]: →
+        - link "Learn More" [ref=e88]:
+          - /url: "#services"
+          - text: Learn More
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - generic [ref=e94] [cursor=pointer]:
+          - text: Meta Ads
+          - generic [ref=e95]: ✦
+        - generic [ref=e96] [cursor=pointer]:
+          - text: Google Ads
+          - generic [ref=e97]: ✦
+        - generic [ref=e98] [cursor=pointer]:
+          - text: TikTok Ads
+          - generic [ref=e99]: ✦
+        - generic [ref=e100] [cursor=pointer]:
+          - text: Pinterest Ads
+          - generic [ref=e101]: ✦
+        - generic [ref=e102] [cursor=pointer]:
+          - text: ROAS Optimization
+          - generic [ref=e103]: ✦
+        - generic [ref=e104] [cursor=pointer]:
+          - text: Ad Account Audits
+          - generic [ref=e105]: ✦
+        - generic [ref=e106] [cursor=pointer]:
+          - text: Paid Social
+          - generic [ref=e107]: ✦
+        - generic [ref=e108] [cursor=pointer]:
+          - text: Performance Marketing
+          - generic [ref=e109]: ✦
+      - generic [ref=e110]:
+        - generic [ref=e111] [cursor=pointer]:
+          - text: Meta Ads
+          - generic [ref=e112]: ✦
+        - generic [ref=e113] [cursor=pointer]:
+          - text: Google Ads
+          - generic [ref=e114]: ✦
+        - generic [ref=e115] [cursor=pointer]:
+          - text: TikTok Ads
+          - generic [ref=e116]: ✦
+        - generic [ref=e117] [cursor=pointer]:
+          - text: Pinterest Ads
+          - generic [ref=e118]: ✦
+        - generic [ref=e119] [cursor=pointer]:
+          - text: ROAS Optimization
+          - generic [ref=e120]: ✦
+        - generic [ref=e121] [cursor=pointer]:
+          - text: Ad Account Audits
+          - generic [ref=e122]: ✦
+        - generic [ref=e123] [cursor=pointer]:
+          - text: Paid Social
+          - generic [ref=e124]: ✦
+        - generic [ref=e125] [cursor=pointer]:
+          - text: Performance Marketing
+          - generic [ref=e126]: ✦
+      - generic [ref=e127]:
+        - generic [ref=e128] [cursor=pointer]:
+          - text: Meta Ads
+          - generic [ref=e129]: ✦
+        - generic [ref=e130] [cursor=pointer]:
+          - text: Google Ads
+          - generic [ref=e131]: ✦
+        - generic [ref=e132] [cursor=pointer]:
+          - text: TikTok Ads
+          - generic [ref=e133]: ✦
+        - generic [ref=e134] [cursor=pointer]:
+          - text: Pinterest Ads
+          - generic [ref=e135]: ✦
+        - generic [ref=e136] [cursor=pointer]:
+          - text: ROAS Optimization
+          - generic [ref=e137]: ✦
+        - generic [ref=e138] [cursor=pointer]:
+          - text: Ad Account Audits
+          - generic [ref=e139]: ✦
+        - generic [ref=e140] [cursor=pointer]:
+          - text: Paid Social
+          - generic [ref=e141]: ✦
+        - generic [ref=e142] [cursor=pointer]:
+          - text: Performance Marketing
+          - generic [ref=e143]: ✦
+    - generic [ref=e145]:
+      - generic [ref=e146]:
+        - generic [ref=e147]:
+          - generic [ref=e148]: WHAT WE DO
+          - heading "Services Built for Performance" [level=2] [ref=e150]:
+            - text: Services Built
+            - text: for Performance
+        - paragraph [ref=e151]: We build and scale paid campaigns on Meta, Google & TikTok — obsessively engineered around your return on ad spend.
+      - generic [ref=e152]:
+        - generic [ref=e154] [cursor=pointer]:
+          - img "Meta Ads" [ref=e156]
+          - generic [ref=e157]: "01"
+        - generic [ref=e158]:
+          - generic [ref=e159]: "01"
+          - heading "Meta Ads" [level=3] [ref=e160]
+          - paragraph [ref=e161]: Facebook & Instagram campaigns built to convert. From prospecting to retargeting — we manage the full funnel with precision.
+          - generic [ref=e162]:
+            - generic [ref=e163]: Full-Funnel
+            - generic [ref=e164]: Facebook
+            - generic [ref=e165]: Instagram
+            - generic [ref=e166]: Retargeting
+          - generic [ref=e167]:
+            - link [ref=e168]:
+              - /url: "#contact"
+              - img [ref=e169]
+            - generic [ref=e171]: Get Started
+      - generic [ref=e172]:
+        - generic [ref=e174] [cursor=pointer]:
+          - img "Google Ads" [ref=e176]
+          - generic [ref=e177]: "02"
+        - generic [ref=e178]:
+          - generic [ref=e179]: "02"
+          - heading "Google Ads" [level=3] [ref=e180]
+          - paragraph [ref=e181]: Search, Shopping, and Performance Max campaigns that capture demand and drive qualified traffic directly to your offer.
+          - generic [ref=e182]:
+            - generic [ref=e183]: Search
+            - generic [ref=e184]: Shopping
+            - generic [ref=e185]: PMax
+            - generic [ref=e186]: Conquesting
+          - generic [ref=e187]:
+            - link [ref=e188]:
+              - /url: "#contact"
+              - img [ref=e189]
+            - generic [ref=e191]: Get Started
+      - generic [ref=e192]:
+        - generic [ref=e194] [cursor=pointer]:
+          - img "TikTok Ads" [ref=e196]
+          - generic [ref=e197]: "03"
+        - generic [ref=e198]:
+          - generic [ref=e199]: "03"
+          - heading "TikTok Ads" [level=3] [ref=e200]
+          - paragraph [ref=e201]: Creative-first campaigns on the fastest growing ad platform. We test, learn, and scale what works — fast.
+          - generic [ref=e202]:
+            - generic [ref=e203]: UGC
+            - generic [ref=e204]: Spark Ads
+            - generic [ref=e205]: Catalog Feeds
+            - generic [ref=e206]: Trend Testing
+          - generic [ref=e207]:
+            - link [ref=e208]:
+              - /url: "#contact"
+              - img [ref=e209]
+            - generic [ref=e211]: Get Started
+      - generic [ref=e212]:
+        - generic [ref=e214] [cursor=pointer]:
+          - img "Ad Account Audits" [ref=e216]
+          - generic [ref=e217]: "04"
+        - generic [ref=e218]:
+          - generic [ref=e219]: "04"
+          - heading "Ad Account Audits" [level=3] [ref=e220]
+          - paragraph [ref=e221]: Already running ads? We'll deep-dive your account, identify what's killing your ROAS, and give you a clear action plan.
+          - generic [ref=e222]:
+            - generic [ref=e223]: Bid Strategy
+            - generic [ref=e224]: Creative Fatigue
+            - generic [ref=e225]: Attribution
+          - generic [ref=e226]:
+            - link [ref=e227]:
+              - /url: "#contact"
+              - img [ref=e228]
+            - generic [ref=e230]: Get Started
+      - generic [ref=e231]:
+        - generic [ref=e233] [cursor=pointer]:
+          - img "Strategy & Consulting" [ref=e235]
+          - generic [ref=e236]: "05"
+        - generic [ref=e237]:
+          - generic [ref=e238]: "05"
+          - heading "Strategy & Consulting" [level=3] [ref=e239]
+          - paragraph [ref=e240]: Not sure where to start? We'll map out the right platforms, budget allocation, and funnel strategy for your business.
+          - generic [ref=e241]:
+            - generic [ref=e242]: Roadmapping
+            - generic [ref=e243]: Budget Split
+            - generic [ref=e244]: Unit Economics
+          - generic [ref=e245]:
+            - link [ref=e246]:
+              - /url: "#contact"
+              - img [ref=e247]
+            - generic [ref=e249]: Get Started
+      - generic [ref=e250]:
+        - generic [ref=e252] [cursor=pointer]:
+          - img "Performance Reporting" [ref=e254]
+          - generic [ref=e255]: "06"
+        - generic [ref=e256]:
+          - generic [ref=e257]: "06"
+          - heading "Performance Reporting" [level=3] [ref=e258]
+          - paragraph [ref=e259]: Clear, transparent reporting that tracks what matters — ROAS, CPA, revenue. No fluff, just numbers that tell the truth.
+          - generic [ref=e260]:
+            - generic [ref=e261]: Looker Studio
+            - generic [ref=e262]: LTV Tracking
+            - generic [ref=e263]: Weekly Briefs
+          - generic [ref=e264]:
+            - link [ref=e265]:
+              - /url: "#contact"
+              - img [ref=e266]
+            - generic [ref=e268]: Get Started
+    - generic [ref=e270]:
+      - generic [ref=e271]:
+        - generic [ref=e272]:
+          - text: // HOW IT WORKS
+          - heading "Simple Process. Serious Results." [level=2] [ref=e273]:
+            - generic [ref=e528]: Simple
+            - generic [ref=e529]: Process.
+            - generic [ref=e530]: Serious
+            - generic [ref=e531]: Results.
+        - paragraph [ref=e274]: Three clear steps from discovery to scale. No fluff, no filler — just execution.
+      - generic [ref=e275]:
+        - generic [ref=e276]:
+          - generic: "01"
+          - generic [ref=e279]: 01 — Discovery
+          - heading "Audit" [level=3] [ref=e280]
+          - paragraph [ref=e281]: We analyse your current ads, audience, and funnel. Starting fresh? We research your market and map your competitors.
+          - generic [ref=e282]:
+            - generic [ref=e283]: Step 01 of 03
+            - img [ref=e285]
+        - generic [ref=e287]:
+          - generic: "02"
+          - generic [ref=e290]: 02 — Planning
+          - heading "Strategy" [level=3] [ref=e291]
+          - paragraph [ref=e292]: We build a tailored paid ads strategy — platforms, budgets, creatives, and targeting — aligned to your revenue goals.
+          - generic [ref=e293]:
+            - generic [ref=e294]: Step 02 of 03
+            - img [ref=e296]
+        - generic [ref=e298]:
+          - generic: "03"
+          - generic [ref=e301]: 03 — Execution
+          - heading "Scale" [level=3] [ref=e302]
+          - paragraph [ref=e303]: We launch, test, optimise, and scale. Every decision is driven by data with one goal — maximising your ROAS.
+          - generic [ref=e304]:
+            - generic [ref=e305]: Step 03 of 03
+            - img [ref=e307]
+    - generic [ref=e310]:
+      - generic [ref=e311]:
+        - generic [ref=e312]:
+          - text: // ABOUT
+          - heading "Built Around One Metric." [level=2] [ref=e313]:
+            - generic [ref=e532]: Built
+            - generic [ref=e533]: Around
+            - generic [ref=e534]: One
+            - generic [ref=e535]: Metric.
+          - link "Work With Us Work With Us" [ref=e315]:
+            - /url: "#contact"
+            - generic [ref=e316]:
+              - generic [ref=e317]: Work With Us
+              - generic [ref=e318]: Work With Us
+        - generic [ref=e320]:
+          - paragraph [ref=e321]: "The ROAS House was founded on a simple belief: paid advertising should do more than look good, it should perform."
+          - paragraph [ref=e322]: Too often, businesses invest in campaigns that feel polished on the surface but fail to deliver where it matters. We exist to change that.
+          - paragraph [ref=e323]: With over 16 years of combined experience across digital marketing and paid performance, we bring strategy, platform expertise and commercial thinking to every campaign we run.
+          - paragraph [ref=e324]: "Our focus is clear: stronger return on ad spend, smarter media buying and results you can actually measure."
+          - paragraph [ref=e325]: No vanity metrics. No unnecessary noise. Just paid advertising built to grow your business.
+      - generic [ref=e326]:
+        - generic [ref=e327]:
+          - generic [ref=e328]: ROAS Average
+          - generic [ref=e329]: "0"
+        - generic [ref=e330]:
+          - generic [ref=e331]: Ad Spend Managed
+          - generic [ref=e332]: "0"
+        - generic [ref=e333]:
+          - generic [ref=e334]: Client Profits
+          - generic [ref=e335]: "0"
+    - generic [ref=e338]:
+      - generic [ref=e339]:
+        - text: // ROI INTERACTIVE CALCULATOR
+        - heading "Calculate Your Returns" [level=3] [ref=e340]
+        - paragraph [ref=e341]: Adjust the sliders below to see what scaling your ROAS can do for your bottom line.
+      - generic [ref=e342]:
+        - generic [ref=e343]:
+          - generic [ref=e344]:
+            - generic [ref=e345]:
+              - generic [ref=e346]: Monthly Ad Spend
+              - generic [ref=e347]: $15,000
+            - slider [ref=e348]: "15000"
+            - generic [ref=e349]:
+              - generic [ref=e350]: $5,000
+              - generic [ref=e351]: $150,000+
+          - generic [ref=e352]:
+            - generic [ref=e353]:
+              - generic [ref=e354]: Target ROAS
+              - generic [ref=e355]: 3.5x Return
+            - slider [ref=e356]: "3.5"
+            - generic [ref=e357]:
+              - generic [ref=e358]: 1.5x
+              - generic [ref=e359]: 8.0x
+        - generic [ref=e360]:
+          - generic [ref=e361]:
+            - generic [ref=e362]: Projected Revenue
+            - generic [ref=e363]: $52,500
+            - generic [ref=e364]: Gross Monthly Ad Return
+          - generic [ref=e365]:
+            - generic [ref=e366]: Net Ad Profit
+            - generic [ref=e367]: $37,500
+            - generic [ref=e368]: Pure Performance Lift
+          - generic [ref=e372]: "Returns Ratio: 3.5 : 1"
+    - generic [ref=e386]:
+      - generic [ref=e387]:
+        - text: // FAQ
+        - heading "Common Questions" [level=2] [ref=e388]
+        - paragraph [ref=e389]: Got questions about budgets, platforms, or timelines? Here is how we run paid advertising at The Roas Haus.
+        - img [ref=e392]
+      - generic [ref=e394]:
+        - generic [ref=e395]:
+          - button "Do I need an existing ad account?" [ref=e396]:
+            - generic [ref=e397]: Do I need an existing ad account?
+            - img [ref=e399]
+          - generic [ref=e402]: No. We can set everything up from scratch — ad accounts, pixels, tracking, and creative strategy.
+        - generic [ref=e403]:
+          - button "What budget do I need to get started?" [ref=e404]:
+            - generic [ref=e405]: What budget do I need to get started?
+            - img [ref=e407]
+          - generic [ref=e410]: We work with a range of budgets. Book a free consultation and we'll advise what makes sense for your goals.
+        - generic [ref=e411]:
+          - button "How long before I see results?" [ref=e412]:
+            - generic [ref=e413]: How long before I see results?
+            - img [ref=e415]
+          - generic [ref=e418]: Most clients see meaningful data within the first 2–4 weeks. Scaling typically happens from month 2 onwards.
+        - generic [ref=e419]:
+          - button "Which platforms do you work on?" [ref=e420]:
+            - generic [ref=e421]: Which platforms do you work on?
+            - img [ref=e423]
+          - generic [ref=e426]: Meta (Facebook & Instagram), Google Ads, and TikTok Ads. We recommend platforms based on your audience and product.
+        - generic [ref=e427]:
+          - button "What makes you different?" [ref=e428]:
+            - generic [ref=e429]: What makes you different?
+            - img [ref=e431]
+          - generic [ref=e435]: We're obsessively focused on ROAS — not impressions, not clicks. Every decision we make is tied back to your return.
+        - generic [ref=e436]:
+          - button "Do you offer one-off audits?" [ref=e437]:
+            - generic [ref=e438]: Do you offer one-off audits?
+            - img [ref=e440]
+          - generic [ref=e443]: Yes. If you just need a fresh set of expert eyes on your account, our standalone audit service is a great starting point.
+    - generic [ref=e445]:
+      - text: // GROW YOUR REVENUES
+      - heading "Ready to Scale Your ROAS?" [level=2] [ref=e446]:
+        - generic [ref=e536]: Ready
+        - generic [ref=e537]: to
+        - generic [ref=e538]: Scale
+        - generic [ref=e539]: Your
+        - generic [ref=e541]: ROAS?
+      - paragraph [ref=e447]: Book a free 30-minute consultation. No pressure, no pitch — just honest advice.
+      - link "Book a Free Consultation Book a Free Consultation" [ref=e449]:
+        - /url: mailto:hello@theroashaus.com
+        - generic [ref=e450]:
+          - generic [ref=e451]: Book a Free Consultation
+          - generic [ref=e452]: Book a Free Consultation
+  - contentinfo [ref=e453]:
+    - generic:
+      - generic: ROAS HAUS
+    - generic [ref=e454]:
+      - generic [ref=e455]:
+        - generic [ref=e456]: ROAS HAUS.
+        - paragraph [ref=e457]: We Don't Run Ads. We Run Returns. Paid advertising built around absolute revenue growth.
+        - generic [ref=e458]:
+          - paragraph [ref=e459]:
+            - text: "Email:"
+            - link "hello@theroashaus.com" [ref=e460]:
+              - /url: mailto:hello@theroashaus.com
+          - paragraph [ref=e461]: "Office: New York City, NY"
+      - generic [ref=e462]:
+        - heading "Navigation" [level=4] [ref=e463]
+        - generic [ref=e464]:
+          - link "Services" [ref=e465]:
+            - /url: "#services"
+          - link "Process" [ref=e466]:
+            - /url: "#process"
+          - link "About" [ref=e467]:
+            - /url: "#about"
+          - link "Contact" [ref=e468]:
+            - /url: "#contact"
+      - generic [ref=e469]:
+        - heading "Paid Platforms We Scale" [level=4] [ref=e470]
+        - generic [ref=e471]:
+          - generic [ref=e472]: Meta Ads
+          - generic [ref=e473]: Google Search
+          - generic [ref=e474]: Google Shopping
+          - generic [ref=e475]: TikTok Business
+          - generic [ref=e476]: Performance Max
+          - generic [ref=e477]: Pinterest Ads
+    - generic [ref=e478]:
+      - paragraph [ref=e479]: © 2025 The Roas Haus. All rights reserved.
+      - generic [ref=e480]:
+        - link "Privacy Policy" [ref=e481]:
+          - /url: "#"
+        - link "Terms of Service" [ref=e482]:
+          - /url: "#"
+  - button "Open Next.js Dev Tools" [ref=e488] [cursor=pointer]:
+    - img [ref=e489]
+  - alert [ref=e542]
