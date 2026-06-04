@@ -17,11 +17,11 @@ export default function Home() {
           {/* Background grid texture & moving blob */}
           <div className="absolute inset-0 z-[-1]">
             <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(ellipse_at_center,_var(--roas-black)_1px,_transparent_1px)] bg-[size:24px_24px]" />
-            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-[#00C475]/5 to-[#F7F2E7]/10 rounded-full blur-3xl float-bob" />
+            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-[#204E3D]/5 to-[#F7F2E7]/10 rounded-full blur-3xl float-bob" />
           </div>
 
           {/* Interactive Cursor-following Glow Blob */}
-          <div className="hero-glow-blob pointer-events-none absolute w-[450px] h-[450px] rounded-full bg-[radial-gradient(circle,_rgba(0,196,117,0.08)_0%,_transparent_70%)] blur-2xl opacity-0 z-[1] transition-opacity duration-500" />
+          <div className="hero-glow-blob pointer-events-none absolute w-[450px] h-[450px] rounded-full bg-[radial-gradient(circle,_rgba(32, 78, 61,0.08)_0%,_transparent_70%)] blur-2xl opacity-0 z-[1] transition-opacity duration-500" />
 
           {/* Social Toolbar - Anchored Floating Vertically on the Far Right */}
           <div className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-8 items-center text-[13px] font-heading font-black tracking-widest text-[#080E0B]">
@@ -29,7 +29,7 @@ export default function Home() {
               <a
                 key={idx}
                 href="#"
-                className="hero-social-link hover:text-[#00C475] transition-colors origin-center rotate-90 my-6 inline-block opacity-0"
+                className="hero-social-link hover:text-[#204E3D] transition-colors origin-center rotate-90 my-6 inline-block opacity-0"
               >
                 {social}
               </a>
@@ -44,8 +44,8 @@ export default function Home() {
               <div className="flex -space-x-3">
                 {[
                   { initials: "FB", bg: "bg-[#080E0B]" },
-                  { initials: "GG", bg: "bg-[#00C475]" },
-                  { initials: "TT", bg: "bg-[#0B3621]" },
+                  { initials: "GG", bg: "bg-[#204E3D]" },
+                  { initials: "TT", bg: "bg-[#0A3D2B]" },
                 ].map((user, idx) => (
                   <div
                     key={idx}
@@ -67,7 +67,7 @@ export default function Home() {
 
             {/* Right Col: Discuss & Action Arrow */}
             <div className="hero-audit-box lg:col-span-6 flex items-center gap-6 justify-self-start lg:justify-self-end opacity-0">
-              <a href="#contact" className="w-16 h-16 rounded-2xl bg-[#00C475]/10 flex items-center justify-center text-[#0B3621] group cursor-pointer hover:bg-[#00C475] hover:text-black transition-colors duration-300 shadow-sm float-bob-y magnet-btn">
+              <a href="#contact" className="w-16 h-16 rounded-2xl bg-[#204E3D]/10 flex items-center justify-center text-[#0A3D2B] group cursor-pointer hover:bg-[#204E3D] hover:text-black transition-colors duration-300 shadow-sm float-bob-y magnet-btn">
                 <svg className="w-8 h-8 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 19L19 5M19 5H9M19 5V15" />
                 </svg>
@@ -88,14 +88,14 @@ export default function Home() {
           <div className="w-full max-w-7xl mx-auto my-auto py-12 relative z-10">
             <div className="space-y-6">
               {/* Eyebrow Text */}
-              <span className="hero-eyebrow px-4 py-1.5 rounded-full bg-[#00C475]/15 text-[#00C475] font-heading text-[12px] uppercase font-black tracking-widest inline-block float-bob-y opacity-0">
+              <span className="hero-eyebrow px-4 py-1.5 rounded-full bg-[#204E3D]/15 text-[#204E3D] font-heading text-[12px] uppercase font-black tracking-widest inline-block float-bob-y opacity-0">
                 Performance Advertising Agency
               </span>
               
               {/* Main Headline */}
               <h1 className="hero-title bw-spilt-title-one text-[64px] sm:text-[96px] md:text-[128px] lg:text-[144px] font-black text-[#080E0B] leading-[0.98] tracking-tighter uppercase select-none">
                 We Don't Run Ads. <br />
-                We Run <span className="text-[#00C475]">Returns.</span>
+                We Run <span className="text-[#204E3D]">Returns.</span>
               </h1>
             </div>
 
@@ -116,17 +116,17 @@ export default function Home() {
                   <span>Book a Free Audit</span>
                 </div>
               </a>
-              <a href="#services" className="hero-cta-button text-[15px] font-heading font-black text-[#080E0B] hover:text-[#00C475] transition-colors flex items-center gap-2 opacity-0">
+              <a href="#services" className="hero-cta-button text-[15px] font-heading font-black text-[#080E0B] hover:text-[#204E3D] transition-colors flex items-center gap-2 opacity-0">
                 Our Services <span>&rarr;</span>
               </a>
             </div>
 
             <a
               href="#services"
-              className="hero-cta-button text-[12px] uppercase tracking-wider font-heading font-bold text-[#3D4F46] hover:text-[#00C475] flex items-center gap-2 opacity-0"
+              className="hero-cta-button text-[12px] uppercase tracking-wider font-heading font-bold text-[#3D4F46] hover:text-[#204E3D] flex items-center gap-2 opacity-0"
             >
               Learn More
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00C475] inline-block animate-ping" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#204E3D] inline-block animate-ping" />
             </a>
           </div>
 
@@ -135,8 +135,8 @@ export default function Home() {
         {/* =========================================================================
             2. SCROLLING MARQUEE BANNER
             ========================================================================= */}
-        <section className="overflow-hidden bg-[#00C475] py-2 relative z-20">
-          <div className="slider-text-marquee bg-[#00C475] border-none shadow-none m-0 rotate-0">
+        <section className="overflow-hidden bg-black py-2 relative z-20">
+          <div className="slider-text-marquee bg-black border-none shadow-none m-0 rotate-0">
             <div className="slider-text-group">
               {[1, 2, 3].map((groupIndex) => (
                 <div key={groupIndex} className="flex items-center">
@@ -150,7 +150,7 @@ export default function Home() {
                     "Paid Social",
                     "Performance Marketing",
                   ].map((text, textIndex) => (
-                    <span key={textIndex} className="slider-text-item text-[#0B3621] -webkit-text-stroke-0 font-black">
+                    <span key={textIndex} className="slider-text-item !text-white -webkit-text-stroke-0 font-black">
                       {text} <span className="slider-text-bullet text-[#FFFFFF]">✦</span>
                     </span>
                   ))}
@@ -306,7 +306,7 @@ export default function Home() {
         <section className="bg-[#F7F2E7] relative overflow-hidden py-24 md:py-32" id="featured-wins">
           <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[720px]">
             {/* Left editorial panel */}
-            <div className="relative lg:col-span-5 bg-[#0B3621] min-h-[560px] md:min-h-[680px] overflow-hidden flex flex-col justify-between px-8 sm:px-12 md:px-16 pt-32 pb-0">
+            <div className="relative lg:col-span-5 bg-[#0A3D2B] min-h-[560px] md:min-h-[680px] overflow-hidden flex flex-col justify-between px-8 sm:px-12 md:px-16 pt-32 pb-0">
               <div className="absolute -top-28 left-1/2 -translate-x-1/2 w-[360px] h-[360px] md:w-[460px] md:h-[460px] rounded-full overflow-hidden border-[18px] border-[#F7F2E7]">
                 <Image
                   src="/project_two.png"
@@ -318,7 +318,7 @@ export default function Home() {
               </div>
 
               <div className="relative z-10 mt-28 md:mt-36">
-                <span className="block text-[13px] font-heading font-black uppercase tracking-[0.24em] text-[#00C475] mb-8">
+                <span className="block text-[13px] font-heading font-black uppercase tracking-[0.24em] text-[#204E3D] mb-8">
                   The winner is
                 </span>
                 <h2 className="bw-spilt-title-two text-[48px] sm:text-[64px] md:text-[76px] font-black leading-[0.9] uppercase text-white tracking-tight">
@@ -329,13 +329,13 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="featured-platform-marquee relative z-10 -mx-8 sm:-mx-12 md:-mx-16 overflow-hidden bg-[#00C475] text-[#0B3621] py-7">
+              <div className="featured-platform-marquee relative z-10 -mx-8 sm:-mx-12 md:-mx-16 overflow-hidden bg-[#204E3D] text-[#0A3D2B] py-7">
                 <div className="featured-platform-track">
                   {[1, 2].map((group) => (
                     <div key={group} className="featured-platform-group">
                       {["Meta Ads", "Google Ads", "TikTok Ads", "Pinterest Ads", "ROAS Optimization"].map((platform) => (
                         <div key={`${group}-${platform}`} className="featured-platform-item">
-                          <span className="font-heading font-black text-[22px] sm:text-[30px] uppercase tracking-normal text-[#0B3621]">
+                          <span className="font-heading font-black text-[22px] sm:text-[30px] uppercase tracking-normal text-[#0A3D2B]">
                             {platform}
                           </span>
                           <span className="text-[28px] sm:text-[34px] leading-none text-white">✦</span>
@@ -352,7 +352,7 @@ export default function Home() {
               <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(ellipse_at_center,_var(--roas-black)_1px,_transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
               <div className="relative z-10">
-                <span className="text-[12px] font-heading font-black uppercase tracking-[0.18em] text-[#00C475]">
+                <span className="text-[12px] font-heading font-black uppercase tracking-[0.18em] text-[#204E3D]">
                   Featured wins
                 </span>
                 <h2 className="bw-spilt-title-two mt-3 text-[70px] sm:text-[100px] md:text-[128px] lg:text-[144px] font-black leading-[0.82] text-[#080E0B] uppercase tracking-tighter select-none">
@@ -375,8 +375,8 @@ export default function Home() {
                       ["4.8x", "Blended ROAS"],
                       ["38%", "CPA reduction"],
                     ].map(([metric, label]) => (
-                      <div key={label} className="border-t border-[#0B3621]/15 pt-4">
-                        <span className="block text-[34px] font-heading font-black text-[#0B3621] leading-none">
+                      <div key={label} className="border-t border-[#0A3D2B]/15 pt-4">
+                        <span className="block text-[34px] font-heading font-black text-[#0A3D2B] leading-none">
                           {metric}
                         </span>
                         <span className="block mt-2 text-[11px] font-heading font-bold uppercase tracking-wider text-[#3D4F46]/65">
@@ -412,16 +412,16 @@ export default function Home() {
             ========================================================================= */}
         <section className="section-padding bg-[#F7F2E7] relative overflow-hidden" id="why-us">
           <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(ellipse_at_center,_var(--roas-black)_1px,_transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-          <div className="absolute top-28 right-[9%] w-2 h-2 rounded-full bg-[#00C475] pointer-events-none" />
+          <div className="absolute top-28 right-[9%] w-2 h-2 rounded-full bg-[#204E3D] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
             <div className="max-w-xl mx-auto lg:ml-[28%] lg:mr-auto mb-16">
               <div className="flex items-center gap-3 mb-5">
-                <span className="text-[28px] leading-none text-[#00C475]">*</span>
-                <span className="text-[16px] font-heading font-black text-[#0B3621]">
+                <span className="text-[28px] leading-none text-[#204E3D]">*</span>
+                <span className="text-[16px] font-heading font-black text-[#0A3D2B]">
                   03. Why Choose Us?
                 </span>
-                <span className="h-px flex-1 bg-[#0B3621]/20" />
+                <span className="h-px flex-1 bg-[#0A3D2B]/20" />
               </div>
               <h2 className="bw-spilt-title-two text-[44px] sm:text-[58px] md:text-[66px] font-black leading-[0.96] text-[#080E0B] tracking-tight">
                 We combine creative storytelling strategy
@@ -451,7 +451,7 @@ export default function Home() {
                   },
                 ].map((item) => (
                   <div key={item.num} className="why-card relative max-w-[330px] lg:ml-auto">
-                    <span className="why-card-number absolute -top-8 -right-5 text-[50px] font-heading font-black text-[#0B3621]/10 leading-none">
+                    <span className="why-card-number absolute -top-8 -right-5 text-[50px] font-heading font-black text-[#0A3D2B]/10 leading-none">
                       {item.num}
                     </span>
                     <div className="flex items-start gap-5">
@@ -527,7 +527,7 @@ export default function Home() {
                   },
                 ].map((item) => (
                   <div key={item.num} className="why-card relative max-w-[330px]">
-                    <span className="why-card-number absolute -top-8 -left-5 text-[50px] font-heading font-black text-[#0B3621]/10 leading-none">
+                    <span className="why-card-number absolute -top-8 -left-5 text-[50px] font-heading font-black text-[#0A3D2B]/10 leading-none">
                       {item.num}
                     </span>
                     <div className="flex items-start gap-5">
@@ -559,12 +559,12 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6 md:px-12">
 
             {/* Section Header */}
-            <div className="flex flex-col lg:flex-row justify-between items-end gap-8 mb-20 pb-12 border-b-2 border-[#0B3621]/8">
+            <div className="flex flex-col lg:flex-row justify-between items-end gap-8 mb-20 pb-12 border-b-2 border-[#0A3D2B]/8">
               <div className="space-y-4">
-                <span className="text-[12px] font-heading font-black uppercase tracking-widest text-[#00C475]">
+                <span className="text-[12px] font-heading font-black uppercase tracking-widest text-[#204E3D]">
                   // HOW IT WORKS
                 </span>
-                <h2 className="bw-spilt-title-two text-[58px] md:text-[76px] font-black leading-[0.92] text-[#0B3621] uppercase tracking-tighter">
+                <h2 className="bw-spilt-title-two text-[58px] md:text-[76px] font-black leading-[0.92] text-[#0A3D2B] uppercase tracking-tighter">
                   Simple Process. <br /> Serious Results.
                 </h2>
               </div>
@@ -574,7 +574,7 @@ export default function Home() {
             </div>
 
             {/* Horizontal step rows — no boxes, pure editorial */}
-            <div className="border-t border-[#0B3621]/10">
+            <div className="border-t border-[#0A3D2B]/10">
               {[
                 {
                   num: "01",
@@ -597,21 +597,21 @@ export default function Home() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="process-card-entrance process-step-row group relative flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-0 py-10 border-b border-[#0B3621]/10 overflow-hidden cursor-default"
+                  className="process-card-entrance process-step-row group relative flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-0 py-10 border-b border-[#0A3D2B]/10 overflow-hidden cursor-default"
                 >
                   {/* Dark green hover fill — sweeps left to right */}
-                  <div className="absolute inset-0 bg-[#0B3621] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]" />
+                  <div className="absolute inset-0 bg-[#0A3D2B] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]" />
 
                   {/* Col 1: Step number (large faded) */}
                   <div className="relative shrink-0 w-28">
-                    <span className="text-[72px] font-black leading-none font-heading select-none text-[#0B3621]/12 group-hover:text-white/10 transition-colors duration-300">
+                    <span className="text-[72px] font-black leading-none font-heading select-none text-[#0A3D2B]/12 group-hover:text-white/10 transition-colors duration-300">
                       {item.num}
                     </span>
                   </div>
 
                   {/* Col 2: Label pill */}
                   <div className="relative shrink-0 lg:w-44">
-                    <span className="inline-flex items-center gap-1.5 text-[11px] font-heading font-black uppercase tracking-widest text-[#00A361] group-hover:text-[#00C475] transition-colors duration-300">
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-heading font-black uppercase tracking-widest text-[#00A361] group-hover:text-[#204E3D] transition-colors duration-300">
                       <span className="w-1.5 h-1.5 rounded-full bg-current shrink-0" />
                       {item.label}
                     </span>
@@ -619,7 +619,7 @@ export default function Home() {
 
                   {/* Col 3: Step title */}
                   <div className="relative flex-1">
-                    <h3 className="text-[36px] md:text-[48px] font-black text-[#0B3621] group-hover:text-white leading-none tracking-tight transition-colors duration-300">
+                    <h3 className="text-[36px] md:text-[48px] font-black text-[#0A3D2B] group-hover:text-white leading-none tracking-tight transition-colors duration-300">
                       {item.title}
                     </h3>
                   </div>
@@ -633,7 +633,7 @@ export default function Home() {
 
                   {/* Col 5: Arrow */}
                   <div className="relative shrink-0 ml-0 lg:ml-8">
-                    <div className="w-10 h-10 rounded-full border border-[#0B3621]/15 group-hover:border-white/25 flex items-center justify-center text-[#0B3621]/25 group-hover:text-white/60 transition-all duration-300">
+                    <div className="w-10 h-10 rounded-full border border-[#0A3D2B]/15 group-hover:border-white/25 flex items-center justify-center text-[#0A3D2B]/25 group-hover:text-white/60 transition-all duration-300">
                       <svg className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 19L19 5M19 5H9M19 5V15" />
                       </svg>
@@ -655,7 +655,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
               <div className="lg:col-span-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00C475]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#204E3D]" />
                   <span className="text-[13px] font-heading font-black text-white">
                     Corporate business theme
                   </span>
@@ -699,7 +699,7 @@ export default function Home() {
                     </div>
                     <div className="h-3 rounded-full bg-white/10 overflow-hidden">
                       <div
-                        className="h-full rounded-full bg-[#00C475]"
+                        className="h-full rounded-full bg-[#204E3D]"
                         style={{ width: value }}
                         aria-hidden="true"
                       />
@@ -734,10 +734,10 @@ export default function Home() {
               
               {/* Left Column: Heading */}
               <div className="about-left-col lg:col-span-5 space-y-4 opacity-0">
-                <span className="text-[12px] font-heading font-black uppercase tracking-widest text-[#00C475]">
+                <span className="text-[12px] font-heading font-black uppercase tracking-widest text-[#204E3D]">
                   // ABOUT
                 </span>
-                <h2 className="bw-spilt-title-two text-[44px] md:text-[56px] font-black leading-none text-[#0B3621] uppercase">
+                <h2 className="bw-spilt-title-two text-[44px] md:text-[56px] font-black leading-none text-[#0A3D2B] uppercase">
                   Built Around <br /> One Metric.
                 </h2>
                 
@@ -784,7 +784,7 @@ export default function Home() {
                   ROAS Average
                 </span>
                 <span
-                  className="text-[64px] font-heading font-black text-[#0B3621] mt-2"
+                  className="text-[64px] font-heading font-black text-[#0A3D2B] mt-2"
                   data-count-start="1"
                   data-count-target="4.8"
                   data-count-suffix="x"
@@ -800,7 +800,7 @@ export default function Home() {
                   Ad Spend Managed
                 </span>
                 <span
-                  className="text-[64px] font-heading font-black text-[#0B3621] mt-2"
+                  className="text-[64px] font-heading font-black text-[#0A3D2B] mt-2"
                   data-count-start="0"
                   data-count-target="15"
                   data-count-suffix="M+"
@@ -816,7 +816,7 @@ export default function Home() {
                   Client Profits
                 </span>
                 <span
-                  className="text-[64px] font-heading font-black text-[#0B3621] mt-2"
+                  className="text-[64px] font-heading font-black text-[#0A3D2B] mt-2"
                   data-count-start="10"
                   data-count-target="84"
                   data-count-suffix="M"
@@ -853,7 +853,7 @@ export default function Home() {
                     className="object-cover grayscale contrast-125 brightness-75 transition duration-700 ease-out group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/34 transition-opacity duration-700 group-hover:opacity-0" />
-                  <div className="absolute inset-x-14 top-[28%] h-6 rounded-full bg-white shadow-[0_0_34px_rgba(255,255,255,0.95)] rotate-[-14deg] transition-all duration-700 group-hover:bg-[#00C475] group-hover:shadow-[0_0_38px_rgba(0,196,117,0.85)]" />
+                  <div className="absolute inset-x-14 top-[28%] h-6 rounded-full bg-white shadow-[0_0_34px_rgba(255,255,255,0.95)] rotate-[-14deg] transition-all duration-700 group-hover:bg-[#204E3D] group-hover:shadow-[0_0_38px_rgba(32, 78, 61,0.85)]" />
                 </div>
               </div>
 
@@ -894,7 +894,7 @@ export default function Home() {
                             key={name}
                             className={[
                               "w-9 h-9 rounded-full border-2 border-[#F7F2E7] flex items-center justify-center text-[10px] font-heading font-black text-white",
-                              ["bg-[#A47B5C]", "bg-[#080E0B]", "bg-[#00A361]", "bg-[#5B6470]", "bg-[#0B3621]"][index],
+                              ["bg-[#A47B5C]", "bg-[#080E0B]", "bg-[#00A361]", "bg-[#5B6470]", "bg-[#0A3D2B]"][index],
                             ].join(" ")}
                           >
                             {name}
@@ -975,16 +975,16 @@ export default function Home() {
           
           {/* Decorative floating grids & ambient glows */}
           <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(ellipse_at_center,_#fff_1px,_transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#00C475]/8 blur-3xl pointer-events-none float-bob" />
-          <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-[#00C475]/10 blur-3xl pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#204E3D]/8 blur-3xl pointer-events-none float-bob" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-[#204E3D]/10 blur-3xl pointer-events-none" />
 
           <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10 px-6">
-            <span className="text-[12px] font-heading font-black uppercase tracking-widest text-[#00C475]">
+            <span className="text-[12px] font-heading font-black uppercase tracking-widest text-[#204E3D]">
               // GROW YOUR REVENUES
             </span>
             <h2 className="bw-spilt-title-two text-[44px] sm:text-[56px] md:text-[72px] font-black leading-none uppercase select-none text-white">
               Ready to Scale <br />
-              Your <span className="text-[#00C475]">ROAS?</span>
+              Your <span className="text-[#204E3D]">ROAS?</span>
             </h2>
             <p className="bw-split-text text-[16px] sm:text-[18px] text-white/70 max-w-xl mx-auto font-body leading-relaxed">
               Book a free 30-minute consultation. No pressure, no pitch — just honest advice.
@@ -1014,7 +1014,7 @@ export default function Home() {
             THE ROAS HAUS
           </h2>
 
-          <div className="relative z-10 rounded-[34px] md:rounded-[46px] bg-[#00C475] px-7 sm:px-10 md:px-16 lg:px-20 pt-32 sm:pt-40 md:pt-48 lg:pt-52 pb-10 md:pb-12 shadow-[0_30px_80px_rgba(0,196,117,0.18)] overflow-hidden">
+          <div className="relative z-10 rounded-[34px] md:rounded-[46px] bg-[#204E3D] px-7 sm:px-10 md:px-16 lg:px-20 pt-32 sm:pt-40 md:pt-48 lg:pt-52 pb-10 md:pb-12 shadow-[0_30px_80px_rgba(32, 78, 61,0.18)] overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(255,255,255,0.22),transparent_34%),linear-gradient(135deg,rgba(11,54,33,0.16),transparent_45%)] pointer-events-none" />
 
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-10 items-start">
@@ -1027,28 +1027,28 @@ export default function Home() {
                 </p>
 
                 <div className="mt-8 space-y-2 font-heading font-black text-[17px] md:text-[19px] text-white">
-                  <a href="mailto:hello@theroashaus.com" className="block hover:text-[#0B3621] transition-colors">
+                  <a href="mailto:hello@theroashaus.com" className="block hover:text-[#0A3D2B] transition-colors">
                     hello@theroashaus.com
                   </a>
-                  <a href="tel:+121261670051" className="block hover:text-[#0B3621] transition-colors">
+                  <a href="tel:+121261670051" className="block hover:text-[#0A3D2B] transition-colors">
                     (+121) 616700 51
                   </a>
                 </div>
 
                 <div className="mt-8 flex flex-wrap gap-x-4 gap-y-2 text-[14px] font-heading font-black">
-                  <a href="#" className="hover:text-[#0B3621] transition-colors">Instagram</a>
-                  <a href="#" className="hover:text-[#0B3621] transition-colors">LinkedIn</a>
-                  <a href="#" className="hover:text-[#0B3621] transition-colors">Twitter</a>
+                  <a href="#" className="hover:text-[#0A3D2B] transition-colors">Instagram</a>
+                  <a href="#" className="hover:text-[#0A3D2B] transition-colors">LinkedIn</a>
+                  <a href="#" className="hover:text-[#0A3D2B] transition-colors">Twitter</a>
                 </div>
               </div>
 
               <nav className="md:col-span-3 lg:col-span-3 grid gap-3 text-[16px] font-heading font-black">
-                <a href="#home" className="hover:text-[#0B3621] transition-colors">Home</a>
-                <a href="#services" className="hover:text-[#0B3621] transition-colors">Services</a>
-                <a href="#process" className="hover:text-[#0B3621] transition-colors">Process</a>
-                <a href="#about" className="hover:text-[#0B3621] transition-colors">About</a>
-                <a href="#faq" className="hover:text-[#0B3621] transition-colors">FAQ</a>
-                <a href="#contact" className="hover:text-[#0B3621] transition-colors">Contact Us</a>
+                <a href="#home" className="hover:text-[#0A3D2B] transition-colors">Home</a>
+                <a href="#services" className="hover:text-[#0A3D2B] transition-colors">Services</a>
+                <a href="#process" className="hover:text-[#0A3D2B] transition-colors">Process</a>
+                <a href="#about" className="hover:text-[#0A3D2B] transition-colors">About</a>
+                <a href="#faq" className="hover:text-[#0A3D2B] transition-colors">FAQ</a>
+                <a href="#contact" className="hover:text-[#0A3D2B] transition-colors">Contact Us</a>
               </nav>
 
               <div className="md:col-span-4 lg:col-span-4">
@@ -1056,7 +1056,7 @@ export default function Home() {
                   By subscribing you agree with our Privacy Policy
                 </p>
 
-                <form className="mt-10 flex items-center w-full max-w-[390px] rounded-full bg-[#0B3621]/12 p-2 pl-6">
+                <form className="mt-10 flex items-center w-full max-w-[390px] rounded-full bg-[#0A3D2B]/12 p-2 pl-6">
                   <input
                     type="email"
                     aria-label="Email address"
@@ -1066,7 +1066,7 @@ export default function Home() {
                   <button
                     type="submit"
                     aria-label="Submit email"
-                    className="shrink-0 w-12 h-12 rounded-full bg-white text-[#060907] flex items-center justify-center hover:bg-[#0B3621] hover:text-white transition-colors"
+                    className="shrink-0 w-12 h-12 rounded-full bg-white text-[#060907] flex items-center justify-center hover:bg-[#0A3D2B] hover:text-white transition-colors"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.4} d="M5 12l14-7-7 14-2-6-5-1z" />

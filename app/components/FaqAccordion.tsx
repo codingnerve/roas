@@ -46,10 +46,10 @@ export default function FaqAccordion() {
       
       {/* Left Column: Heading and Star */}
       <div className="lg:col-span-5 space-y-6">
-        <span className="text-[12px] font-heading font-black uppercase tracking-widest text-[#00C475]">
+        <span className="text-[12px] font-heading font-black uppercase tracking-widest text-[#204E3D]">
           // FAQ
         </span>
-        <h2 className="text-[52px] font-heading font-black leading-none text-[#0B3621] uppercase">
+        <h2 className="text-[52px] font-heading font-black leading-none text-[#0A3D2B] uppercase">
           Common Questions
         </h2>
         <p className="text-[16px] text-[#4A5D54] max-w-sm leading-relaxed font-body">
@@ -58,7 +58,7 @@ export default function FaqAccordion() {
         
         {/* Rotating 4-point Star Sparkle Shape */}
         <div className="pt-8 pl-4">
-          <div className="w-24 h-24 rotate-me text-[#00C475] flex items-center justify-center">
+          <div className="w-24 h-24 rotate-me text-[#204E3D] flex items-center justify-center">
             <svg className="w-full h-full fill-current" viewBox="0 0 24 24">
               <path d="M12 0 C12 6.6 17.4 12 24 12 C17.4 12 12 17.4 12 24 C12 17.4 6.6 12 0 12 C6.6 12 12 6.6 12 0 Z" />
             </svg>
@@ -74,21 +74,21 @@ export default function FaqAccordion() {
             <div
               key={index}
               className={`border border-[#E2EBE6] rounded-2xl overflow-hidden transition-all duration-300 bg-white
-                ${isOpen ? "border-[#00C475] shadow-[0_10px_30px_rgba(0,196,117,0.03)]" : "hover:border-[#0B3621]/40"}
+                ${isOpen ? "border-[#204E3D] shadow-[0_10px_30px_rgba(32, 78, 61,0.03)]" : "hover:border-[#0A3D2B]/40"}
               `}
             >
               <button
                 className="w-full flex justify-between items-center py-6 px-8 text-left transition-colors duration-200"
                 onClick={() => toggleAccordion(index)}
               >
-                <span className="font-heading text-[18px] md:text-[20px] font-bold text-[#0B3621]">
+                <span className="font-heading text-[18px] md:text-[20px] font-bold text-[#0A3D2B]">
                   {item.question}
                 </span>
                 
                 {/* Plus / Minus icon with circle */}
                 <div
                   className={`w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-300
-                    ${isOpen ? "bg-[#00C475] border-[#00C475] text-black rotate-45" : "border-[#E2EBE6] text-[#0B3621] hover:border-[#0B3621]"}
+                    ${isOpen ? "bg-[#204E3D] border-[#204E3D] text-black rotate-45" : "border-[#E2EBE6] text-[#0A3D2B] hover:border-[#0A3D2B]"}
                   `}
                 >
                   <svg

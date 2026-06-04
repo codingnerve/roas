@@ -20,7 +20,7 @@ export default function RoiCalculator() {
   return (
     <div className="roi-calculator-wrap">
       <div className="text-center mb-8">
-        <span className="text-[12px] font-heading font-black uppercase tracking-widest text-[#00C475]">
+        <span className="text-[12px] font-heading font-black uppercase tracking-widest text-[#204E3D]">
           // ROI INTERACTIVE CALCULATOR
         </span>
         <h3 className="text-[32px] font-heading font-black text-white mt-2 leading-tight">
@@ -39,7 +39,7 @@ export default function RoiCalculator() {
           <div className="space-y-3">
             <div className="flex justify-between font-heading font-bold text-white text-[15px]">
               <span>Monthly Ad Spend</span>
-              <span className="text-[#00C475]">{formatCurrency(spend)}</span>
+              <span className="text-[#204E3D]">{formatCurrency(spend)}</span>
             </div>
             <input
               type="range"
@@ -60,7 +60,7 @@ export default function RoiCalculator() {
           <div className="space-y-3">
             <div className="flex justify-between font-heading font-bold text-white text-[15px]">
               <span>Target ROAS</span>
-              <span className="text-[#00C475]">{roas.toFixed(1)}x Return</span>
+              <span className="text-[#204E3D]">{roas.toFixed(1)}x Return</span>
             </div>
             <input
               type="range"
@@ -90,17 +90,17 @@ export default function RoiCalculator() {
             <div className="text-[32px] sm:text-[36px] font-heading font-black text-white leading-none transition-all duration-300">
               {formatCurrency(revenue)}
             </div>
-            <div className="text-[11px] font-body text-[#00C475] pt-1">
+            <div className="text-[11px] font-body text-[#204E3D] pt-1">
               Gross Monthly Ad Return
             </div>
           </div>
 
           {/* Output 2: Net profit */}
-          <div className="p-4 space-y-1 bg-[#00C475]/10 rounded-xl border border-[#00C475]/10">
-            <span className="text-[12px] font-heading font-bold text-[#00C475] uppercase tracking-wider block">
+          <div className="p-4 space-y-1 bg-[#204E3D]/10 rounded-xl border border-[#204E3D]/10">
+            <span className="text-[12px] font-heading font-bold text-[#204E3D] uppercase tracking-wider block">
               Net Ad Profit
             </span>
-            <div className="text-[32px] sm:text-[36px] font-heading font-black text-[#00C475] leading-none transition-all duration-300">
+            <div className="text-[32px] sm:text-[36px] font-heading font-black text-[#204E3D] leading-none transition-all duration-300">
               {formatCurrency(netProfit)}
             </div>
             <div className="text-[11px] font-body text-white/70 pt-1">
@@ -111,7 +111,7 @@ export default function RoiCalculator() {
           {/* Graphical visualizer */}
           <div className="sm:col-span-2 pt-4 border-t border-white/5 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#00C475] inline-block animate-pulse" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#204E3D] inline-block animate-pulse" />
               <span className="text-[12px] font-heading font-bold text-white/70">
                 Returns Ratio: {roas.toFixed(1)} : 1
               </span>
@@ -125,7 +125,7 @@ export default function RoiCalculator() {
                   <div
                     key={idx}
                     className={`w-1.5 rounded-t-sm transition-all duration-300
-                      ${active ? "bg-[#00C475]" : "bg-white/10"}`}
+                      ${active ? "bg-[#204E3D]" : "bg-white/10"}`}
                     style={{ height: `${ratio * 100}%` }}
                   />
                 );

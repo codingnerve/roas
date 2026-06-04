@@ -88,7 +88,7 @@ export default function CustomCursor() {
       {/* Inner Dot (Electric Green) */}
       <div
         ref={dotRef}
-        className="custom-cursor fixed top-0 left-0 w-2 h-2 bg-[#00C475] rounded-full pointer-events-none z-[9999]"
+        className="custom-cursor fixed top-0 left-0 w-2 h-2 bg-[#204E3D] rounded-full pointer-events-none z-[9999]"
         style={{ opacity: hasMoved ? (isHoveringProject ? 0 : 1) : 0, transition: "opacity 0.2s" }}
       />
       

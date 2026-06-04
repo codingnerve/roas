@@ -30,7 +30,7 @@ export default function Header() {
       >
         {/* Logo */}
         <a href="#" className="text-[24px] font-heading font-black text-[#080E0B] tracking-tight uppercase">
-          ROAS HAUS<span className="text-[#00C475]">.</span>
+          ROAS HAUS<span className="text-[#204E3D]">.</span>
         </a>
 
         {/* Center menu */}
@@ -45,10 +45,10 @@ export default function Header() {
             <a
               key={link.label}
               href={link.href}
-              className="text-[15px] font-heading font-bold text-[#080E0B] hover:text-[#00C475] transition-colors relative group py-2"
+              className="text-[15px] font-heading font-bold text-[#080E0B] hover:text-[#204E3D] transition-colors relative group py-2"
             >
               {link.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#00C475] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#204E3D] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
@@ -65,7 +65,7 @@ export default function Header() {
           {/* Hamburger Menu Trigger */}
           <button
             onClick={() => setIsSidebarOpen(true)}
-            className="w-12 h-12 rounded-full border border-[#E2EBE6] bg-[#F7F2E7] flex items-center justify-center text-[#080E0B] hover:border-[#00C475] hover:bg-[#00C475]/5 transition-colors"
+            className="w-12 h-12 rounded-full border border-[#E2EBE6] bg-[#F7F2E7] flex items-center justify-center text-[#080E0B] hover:border-[#204E3D] hover:bg-[#204E3D]/5 transition-colors"
             aria-label="Open sidebar menu"
           >
             <svg

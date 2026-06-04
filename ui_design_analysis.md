@@ -21,7 +21,7 @@ The interface leverages a clean, high-contrast palette with pops of neon and war
 | **Primary Typography** | `#FFFFFF` | Crisp white for dominant headings, subheadings, and titles. |
 | **Muted Typography** | `#A3A3A3` / `#E5E5E5` | Muted gray for body copy to prevent visual fatigue. |
 | **Accent Red/Coral** | `#FF5B22` | Energetic coral red used for the category indicator and promotional badges. |
-| **Accent Green** | `#00C475` | Neon electric green, utilized in the header branding and CTAs. |
+| **Accent Green** | `#204E3D` | Neon electric green, utilized in the header branding and CTAs. |
 
 ---
 

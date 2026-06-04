@@ -59,12 +59,12 @@ export default function OffCanvasMenu({ isOpen, onClose }: OffCanvasMenuProps) {
       >
         {/* Header */}
         <div className="flex justify-between items-center sidebar-item">
-          <div className="text-[24px] font-heading font-black text-[#00C475] tracking-tight">
+          <div className="text-[24px] font-heading font-black text-[#204E3D] tracking-tight">
             ROAS HAUS.
           </div>
           <button
             onClick={onClose}
-            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-[#00C475] hover:bg-[#00C475] hover:text-black transition-colors"
+            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-[#204E3D] hover:bg-[#204E3D] hover:text-black transition-colors"
             aria-label="Close menu"
           >
             <svg
@@ -101,10 +101,10 @@ export default function OffCanvasMenu({ isOpen, onClose }: OffCanvasMenuProps) {
             </h3>
             <div className="space-y-2 font-body text-white/80">
               <p className="flex items-center gap-3">
-                <span className="text-[#00C475] font-bold">E:</span> hello@theroashaus.com
+                <span className="text-[#204E3D] font-bold">E:</span> hello@theroashaus.com
               </p>
               <p className="flex items-center gap-3">
-                <span className="text-[#00C475] font-bold">A:</span> 120 Performance Blvd, Suite 100, New York
+                <span className="text-[#204E3D] font-bold">A:</span> 120 Performance Blvd, Suite 100, New York
               </p>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function OffCanvasMenu({ isOpen, onClose }: OffCanvasMenuProps) {
               <a
                 key={platform}
                 href="#"
-                className="text-[14px] font-bold text-white/70 hover:text-[#00C475] transition-colors"
+                className="text-[14px] font-bold text-white/70 hover:text-[#204E3D] transition-colors"
               >
                 {platform}
               </a>

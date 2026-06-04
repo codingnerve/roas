@@ -173,7 +173,7 @@ export default function Preloader() {
           <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">
             <div
               ref={progressBarRef}
-              className="h-full bg-[#00C475] rounded-full"
+              className="h-full bg-[#204E3D] rounded-full"
               style={{ width: "0%" }}
             />
           </div>
