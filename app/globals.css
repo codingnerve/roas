@@ -536,6 +536,9 @@ select:focus {
 
 .why-marquee {
   position: relative;
+  margin-left: -36px;
+  margin-right: -36px;
+  width: calc(100% + 72px);
   mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
   -webkit-mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
 }
@@ -864,8 +867,8 @@ select:focus {
 }
 
 .stats-circle {
-  width: 340px;
-  height: 340px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -873,7 +876,7 @@ select:focus {
   justify-content: center;
   box-shadow: 0 10px 30px rgba(8, 14, 11, 0.02);
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  margin-left: -78px; /* Overlap */
+  margin-left: -24px; /* Overlap */
   border: 2px solid var(--roas-white);
   z-index: 1;
   opacity: 0; /* Staged for GSAP scroll entrance springy pop */
@@ -882,12 +885,12 @@ select:focus {
 .stats-circle span:first-child {
   max-width: 70%;
   text-align: center;
-  font-size: 15px;
+  font-size: 26px;
   line-height: 1.15;
 }
 
 .stats-circle span:nth-child(2) {
-  font-size: 66px;
+  font-size: 92px;
   line-height: 1;
 }
 
