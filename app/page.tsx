@@ -12,12 +12,12 @@ export default function Home() {
         {/* =========================================================================
             1. HERO SECTION
             ========================================================================= */}
-        <section className="hero-section-container relative min-h-screen pt-44 pb-28 px-8 md:px-16 flex flex-col justify-between overflow-hidden bg-[#F4F8F5]">
+        <section className="hero-section-container relative min-h-screen pt-44 pb-28 px-8 md:px-16 flex flex-col justify-between overflow-hidden bg-[#F7F2E7]">
           
           {/* Background grid texture & moving blob */}
           <div className="absolute inset-0 z-[-1]">
             <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(ellipse_at_center,_var(--roas-black)_1px,_transparent_1px)] bg-[size:24px_24px]" />
-            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-[#00C475]/5 to-[#F4F8F5]/10 rounded-full blur-3xl float-bob" />
+            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-[#00C475]/5 to-[#F7F2E7]/10 rounded-full blur-3xl float-bob" />
           </div>
 
           {/* Interactive Cursor-following Glow Blob */}
@@ -49,7 +49,7 @@ export default function Home() {
                 ].map((user, idx) => (
                   <div
                     key={idx}
-                    className={`hero-avatar w-12 h-12 rounded-full border-2 border-[#F4F8F5] flex items-center justify-center text-white text-[12px] font-heading font-bold ${user.bg} shadow-md opacity-0`}
+                    className={`hero-avatar w-12 h-12 rounded-full border-2 border-[#F7F2E7] flex items-center justify-center text-white text-[12px] font-heading font-bold ${user.bg} shadow-md opacity-0`}
                   >
                     {user.initials}
                   </div>
@@ -303,11 +303,11 @@ export default function Home() {
         {/* =========================================================================
             4. FEATURED WINS SECTION (Editorial Case Study Layout)
             ========================================================================= */}
-        <section className="bg-[#F4F8F5] relative overflow-hidden py-24 md:py-32" id="featured-wins">
+        <section className="bg-[#F7F2E7] relative overflow-hidden py-24 md:py-32" id="featured-wins">
           <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[720px]">
             {/* Left editorial panel */}
             <div className="relative lg:col-span-5 bg-[#0B3621] min-h-[560px] md:min-h-[680px] overflow-hidden flex flex-col justify-between px-8 sm:px-12 md:px-16 pt-32 pb-0">
-              <div className="absolute -top-28 left-1/2 -translate-x-1/2 w-[360px] h-[360px] md:w-[460px] md:h-[460px] rounded-full overflow-hidden border-[18px] border-[#F4F8F5]">
+              <div className="absolute -top-28 left-1/2 -translate-x-1/2 w-[360px] h-[360px] md:w-[460px] md:h-[460px] rounded-full overflow-hidden border-[18px] border-[#F7F2E7]">
                 <Image
                   src="/project_two.png"
                   alt="Performance marketing analytics dashboard"
@@ -348,7 +348,7 @@ export default function Home() {
             </div>
 
             {/* Right feature spread */}
-            <div className="relative lg:col-span-7 bg-[#F4F8F5] min-h-[640px] px-6 sm:px-10 md:px-16 lg:px-20 pt-16 md:pt-24 pb-20">
+            <div className="relative lg:col-span-7 bg-[#F7F2E7] min-h-[640px] px-6 sm:px-10 md:px-16 lg:px-20 pt-16 md:pt-24 pb-20">
               <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(ellipse_at_center,_var(--roas-black)_1px,_transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
               <div className="relative z-10">
@@ -410,7 +410,7 @@ export default function Home() {
         {/* =========================================================================
             5. WHY CHOOSE US SECTION (Light Editorial + Vertical Marquee)
             ========================================================================= */}
-        <section className="section-padding bg-[#F4F8F5] relative overflow-hidden" id="why-us">
+        <section className="section-padding bg-[#F7F2E7] relative overflow-hidden" id="why-us">
           <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(ellipse_at_center,_var(--roas-black)_1px,_transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
           <div className="absolute top-28 right-[9%] w-2 h-2 rounded-full bg-[#00C475] pointer-events-none" />
 
@@ -473,7 +473,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="lg:col-span-4 order-first lg:order-none -mx-4 lg:-mx-8 z-10 relative">
+              <div className="lg:col-span-4 order-first lg:order-none relative">
                 <div className="why-marquee mx-auto h-[560px] w-full overflow-hidden">
                   <div className="grid grid-cols-2 gap-3 h-full w-full">
                     {[0, 1].map((column) => (
@@ -555,7 +555,7 @@ export default function Home() {
         {/* =========================================================================
             6. PROCESS SECTION (Full-Width Horizontal Row List)
             ========================================================================= */}
-        <section className="section-padding bg-[#F4F8F5] overflow-hidden" id="process">
+        <section className="section-padding bg-[#F7F2E7] overflow-hidden" id="process">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
 
             {/* Section Header */}
@@ -655,7 +655,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
               <div className="lg:col-span-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B3A]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00C475]" />
                   <span className="text-[13px] font-heading font-black text-white">
                     Corporate business theme
                   </span>
@@ -699,7 +699,7 @@ export default function Home() {
                     </div>
                     <div className="h-3 rounded-full bg-white/10 overflow-hidden">
                       <div
-                        className="h-full rounded-full bg-[#FF6740]"
+                        className="h-full rounded-full bg-[#00C475]"
                         style={{ width: value }}
                         aria-hidden="true"
                       />
@@ -714,8 +714,20 @@ export default function Home() {
         {/* =========================================================================
             8. ABOUT SECTION (Sage White Theme)
             ========================================================================= */}
-        <section className="section-padding bg-[#F4F8F5]" id="about">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <section className="section-padding bg-[#F7F2E7] relative isolate" id="about">
+          <div className="pointer-events-none sticky top-0 z-0 h-screen -mb-[100vh] overflow-hidden">
+            <Image
+              src="/project_two.png"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover opacity-[0.18] grayscale contrast-125"
+            />
+            <div className="absolute inset-0 bg-[#F7F2E7]/72" />
+            <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(ellipse_at_center,_var(--roas-black)_1px,_transparent_1px)] bg-[size:24px_24px]" />
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
             
             {/* Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start border-b border-[#E1EBE5] pb-16">
@@ -822,32 +834,32 @@ export default function Home() {
         {/* =========================================================================
             6. EXPERIENCE SECTION (Editorial Stats Layout)
             ========================================================================= */}
-        <section className="bg-[#F1F1F1] py-20 md:py-28 overflow-hidden">
+        <section className="bg-[#F7F2E7] py-20 md:py-28 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
               <div className="lg:col-span-5">
-                <div className="flex items-center gap-2 text-[14px] font-heading font-black text-black mb-20">
-                  <span className="w-3 h-3 border border-black/35 bg-black/10 shadow-[inset_0_0_0_2px_rgba(255,255,255,0.45)]" />
+                <div className="flex items-center gap-2 text-[14px] font-heading font-black text-[#18231E] mb-20">
+                  <span className="w-3 h-3 border border-[#18231E]/45 bg-[#18231E]/15 shadow-[inset_0_0_0_2px_rgba(255,255,255,0.45)]" />
                   <span>Experience</span>
-                  <span className="w-3 h-3 border border-black/35 bg-black/10 shadow-[inset_0_0_0_2px_rgba(255,255,255,0.45)]" />
+                  <span className="w-3 h-3 border border-[#18231E]/45 bg-[#18231E]/15 shadow-[inset_0_0_0_2px_rgba(255,255,255,0.45)]" />
                 </div>
 
-                <div className="relative h-[460px] sm:h-[560px] lg:h-[578px] rounded-[7px] overflow-hidden bg-[#8C918E]">
+                <div className="group relative h-[460px] sm:h-[560px] lg:h-[578px] rounded-[7px] overflow-hidden bg-[#8C918E]">
                   <Image
                     src="/project_one.png"
                     alt="Immersive digital experience visual"
                     fill
                     sizes="(min-width: 1024px) 36vw, 100vw"
-                    className="object-cover grayscale contrast-125 brightness-75"
+                    className="object-cover grayscale contrast-125 brightness-75 transition duration-700 ease-out group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/25 via-transparent to-black/40" />
-                  <div className="absolute inset-x-14 top-[28%] h-6 rounded-full bg-white shadow-[0_0_34px_rgba(255,255,255,0.95)] rotate-[-14deg]" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/34 transition-opacity duration-700 group-hover:opacity-0" />
+                  <div className="absolute inset-x-14 top-[28%] h-6 rounded-full bg-white shadow-[0_0_34px_rgba(255,255,255,0.95)] rotate-[-14deg] transition-all duration-700 group-hover:bg-[#00C475] group-hover:shadow-[0_0_38px_rgba(0,196,117,0.85)]" />
                 </div>
               </div>
 
               <div className="lg:col-span-7">
                 <div className="relative mb-16">
-                  <h2 className="text-[42px] sm:text-[56px] md:text-[64px] lg:text-[46px] xl:text-[58px] font-body font-medium leading-[1.02] tracking-normal text-black max-w-[760px]">
+                  <h2 className="text-[42px] sm:text-[56px] md:text-[64px] lg:text-[46px] xl:text-[58px] font-body font-medium leading-[1.02] tracking-normal text-[#060907] max-w-[760px]">
                     User experience as a driving force in design today.
                   </h2>
                   <span className="absolute right-6 lg:right-16 -bottom-10 w-2 h-2 rounded-full bg-[#D7FF2F]" />
@@ -866,22 +878,22 @@ export default function Home() {
                       </div>
 
                       <div className="md:col-span-8">
-                        <h3 className="text-[22px] font-body font-medium text-black tracking-normal">
+                        <h3 className="text-[22px] font-body font-medium text-[#18231E] tracking-normal">
                           Happy customers
                         </h3>
-                        <p className="mt-2 text-[16px] leading-relaxed text-[#4F5965] max-w-[520px]">
+                        <p className="mt-2 text-[16px] leading-relaxed text-[#24332C] max-w-[520px]">
                           We believe that the key to our success lies in understanding our clients.
                         </p>
                       </div>
                     </div>
 
-                    <div className="mt-8 rounded-[5px] bg-[#F1F1F1] px-4 py-3.5 flex flex-col sm:flex-row sm:items-center gap-4">
+                    <div className="mt-8 rounded-[5px] bg-[#F7F2E7] px-4 py-3.5 flex flex-col sm:flex-row sm:items-center gap-4">
                       <div className="flex -space-x-2 shrink-0">
                         {["MH", "AD", "SK", "JR", "TN"].map((name, index) => (
                           <div
                             key={name}
                             className={[
-                              "w-9 h-9 rounded-full border-2 border-[#F1F1F1] flex items-center justify-center text-[10px] font-heading font-black text-white",
+                              "w-9 h-9 rounded-full border-2 border-[#F7F2E7] flex items-center justify-center text-[10px] font-heading font-black text-white",
                               ["bg-[#A47B5C]", "bg-[#080E0B]", "bg-[#00A361]", "bg-[#5B6470]", "bg-[#0B3621]"][index],
                             ].join(" ")}
                           >
@@ -889,15 +901,15 @@ export default function Home() {
                           </div>
                         ))}
                       </div>
-                      <p className="text-[16px] sm:text-[17px] text-black font-body sm:ml-20">
+                      <p className="text-[16px] sm:text-[17px] text-[#24332C] font-body sm:ml-20">
                         Sustainable creativity, timeless appeal.
                       </p>
                     </div>
                   </div>
 
                   <div className="md:col-span-8 rounded-[7px] bg-white p-7 md:p-8 min-h-[330px] relative overflow-hidden">
-                    <span className="text-[22px] text-black/25 font-body">Impressions</span>
-                    <span className="absolute top-4 right-6 text-[120px] md:text-[160px] leading-none font-heading font-black text-black/[0.035] select-none">
+                    <span className="text-[22px] text-[#24332C]/70 font-body">Impressions</span>
+                    <span className="absolute top-4 right-6 text-[120px] md:text-[160px] leading-none font-heading font-black text-[#060907]/[0.055] select-none">
                       N
                     </span>
 
@@ -950,7 +962,7 @@ export default function Home() {
         {/* =========================================================================
             7. FAQ SECTION (Sage White Theme)
             ========================================================================= */}
-        <section className="section-padding bg-[#F4F8F5] border-t border-[#E1EBE5]" id="faq">
+        <section className="section-padding bg-[#F7F2E7] border-t border-[#E1EBE5]" id="faq">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <FaqAccordion />
           </div>
@@ -996,9 +1008,9 @@ export default function Home() {
       {/* =========================================================================
           10. FOOTER BLOCK (Bold Rounded Theme)
           ========================================================================= */}
-      <footer className="bg-[#F4F8F5] text-white relative overflow-hidden pt-16 pb-10 px-5 md:px-10 border-t border-[#E1EBE5]">
+      <footer className="bg-[#F7F2E7] text-white relative overflow-hidden pt-16 pb-10 px-5 md:px-10 border-t border-[#E1EBE5]">
         <div className="relative max-w-7xl mx-auto pt-8 md:pt-16">
-          <h2 className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[18%] z-20 w-full text-center text-[54px] sm:text-[92px] md:text-[132px] lg:text-[170px] xl:text-[206px] font-heading font-black leading-none tracking-[-0.04em] text-[#060907] select-none pointer-events-none whitespace-nowrap">
+          <h2 className="footer-wordmark absolute left-1/2 top-0 -translate-x-1/2 -translate-y-[10%] z-20 w-max max-w-[calc(100vw-2.5rem)] px-2 text-center text-[clamp(2.4rem,9.4vw,9.5rem)] font-heading font-black leading-none tracking-normal text-[#060907] select-none pointer-events-none whitespace-nowrap">
             THE ROAS HAUS
           </h2>
 

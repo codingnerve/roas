@@ -65,7 +65,7 @@ export default function Header() {
           {/* Hamburger Menu Trigger */}
           <button
             onClick={() => setIsSidebarOpen(true)}
-            className="w-12 h-12 rounded-full border border-[#E2EBE6] bg-white flex items-center justify-center text-[#080E0B] hover:border-[#00C475] hover:bg-[#00C475]/5 transition-colors"
+            className="w-12 h-12 rounded-full border border-[#E2EBE6] bg-[#F7F2E7] flex items-center justify-center text-[#080E0B] hover:border-[#00C475] hover:bg-[#00C475]/5 transition-colors"
             aria-label="Open sidebar menu"
           >
             <svg
