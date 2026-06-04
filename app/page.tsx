@@ -163,7 +163,7 @@ export default function Home() {
         {/* =========================================================================
             3. SERVICES SECTION (Sticky Portfolio Card Stack)
             ========================================================================= */}
-        <section className="services-portfolio-section bg-[#060907] relative overflow-hidden py-24 md:py-32" id="services">
+        <section className="services-portfolio-section bg-[#060907] relative py-24 md:py-32" id="services">
           <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(ellipse_at_center,_#fff_1px,_transparent_1px)] bg-[size:26px_26px] pointer-events-none" />
           <div className="absolute top-1/2 left-[48%] w-2 h-2 rounded-full bg-[#D7FF2F] shadow-[0_0_18px_rgba(215,255,47,0.65)] pointer-events-none" />
 
