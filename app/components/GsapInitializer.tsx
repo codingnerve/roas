@@ -152,6 +152,98 @@ export default function GsapInitializer() {
       });
     });
 
+    // 2.5. Bubbling Title — per-letter pop-in, then a continuous floating wave
+    const bubbleLoops: gsap.core.Tween[] = [];
+    const bubbleTitles = document.querySelectorAll(".bubble-text");
+    bubbleTitles.forEach((element) => {
+      const htmlElement = element as HTMLElement;
+
+      // Split text into per-character spans, wrapped per-word so words never break mid-letter
+      const processNode = (node: Node): Node[] => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const text = node.textContent || "";
+          const words = text.split(/(\s+)/); // keep whitespace
+          const out: Node[] = [];
+          words.forEach((word) => {
+            if (word.trim() === "") {
+              out.push(document.createTextNode(word));
+            } else {
+              const wordSpan = document.createElement("span");
+              wordSpan.className = "inline-block whitespace-nowrap";
+              word.split("").forEach((char) => {
+                const charSpan = document.createElement("span");
+                charSpan.className = "bubble-char inline-block";
+                charSpan.textContent = char;
+                wordSpan.appendChild(charSpan);
+              });
+              out.push(wordSpan);
+            }
+          });
+          return out;
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+          const el = node as HTMLElement;
+          if (el.tagName === "BR") return [el.cloneNode(true)];
+          const clone = el.cloneNode(false) as HTMLElement;
+          Array.from(el.childNodes).forEach((child) => {
+            processNode(child).forEach((p) => clone.appendChild(p));
+          });
+          return [clone];
+        }
+        return [node.cloneNode(true)];
+      };
+
+      const childNodes = Array.from(htmlElement.childNodes);
+      htmlElement.innerHTML = "";
+      childNodes.forEach((child) => {
+        processNode(child).forEach((p) => htmlElement.appendChild(p));
+      });
+
+      const chars = htmlElement.querySelectorAll<HTMLElement>(".bubble-char");
+      if (chars.length === 0) return;
+
+      // Hidden initial state — letters start small, flipped back, blurred & below
+      gsap.set(chars, {
+        yPercent: 80,
+        opacity: 0,
+        scale: 0.4,
+        rotateX: -75,
+        transformPerspective: 800,
+        transformOrigin: "50% 100%",
+        filter: "blur(10px)",
+      });
+
+      // Entrance: letters flip up + pop + sharpen in sequence (catchy intro),
+      // then hand off to the endless float
+      gsap.to(chars, {
+        scrollTrigger: {
+          trigger: htmlElement,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+        yPercent: 0,
+        opacity: 1,
+        scale: 1,
+        rotateX: 0,
+        filter: "blur(0px)",
+        duration: 0.9,
+        ease: "back.out(1.6)",
+        stagger: { each: 0.045, from: "start" },
+        onComplete: () => {
+          // Continuous bubbling — each letter bobs on a staggered sine offset (uses
+          // px `y` so it never collides with the yPercent-based entrance above)
+          const loop = gsap.to(chars, {
+            y: -16,
+            duration: 1.4,
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true,
+            stagger: { each: 0.07, from: "start" },
+          });
+          bubbleLoops.push(loop);
+        },
+      });
+    });
+
     // 3. Process letters fade in (.letters-fade-in)
     const lettersFadeElements = document.querySelectorAll(".letters-fade-in");
     lettersFadeElements.forEach((element) => {
@@ -436,7 +528,22 @@ export default function GsapInitializer() {
       });
     }
 
-    // 7.7. About Section — Right Column Paragraphs (staggered slide from right)
+    // 7.65. About Section — background image subtle parallax + scale drift
+    const aboutBg = document.querySelector(".about-bg-img");
+    if (aboutBg && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      gsap.fromTo(
+        aboutBg,
+        { scale: 1.15, yPercent: -4 },
+        {
+          scale: 1.05,
+          yPercent: 4,
+          ease: "none",
+          scrollTrigger: { trigger: "#about", start: "top bottom", end: "bottom top", scrub: 1 },
+        }
+      );
+    }
+
+    // 7.7. About Section — Left Column heading (slide from left; clear transform for sticky)
     const aboutLeftCol = document.querySelector(".about-left-col");
     if (aboutLeftCol) {
       gsap.fromTo(aboutLeftCol,
@@ -451,6 +558,7 @@ export default function GsapInitializer() {
           opacity: 1,
           duration: 0.8,
           ease: "power3.out",
+          onComplete: () => gsap.set(aboutLeftCol, { clearProps: "transform" }),
         }
       );
     }
@@ -501,6 +609,262 @@ export default function GsapInitializer() {
           ease: "back.out(1.7)",
         }
       );
+    }
+
+    // 7.85. Featured Wins Section — staggered text, circle & image reveals
+    const featuredSection = document.querySelector("#featured-wins");
+    if (featuredSection) {
+      // Staggered text reveals (eyebrows, paragraph, stats) — each on its own trigger
+      const featuredReveals = gsap.utils.toArray<HTMLElement>("#featured-wins .featured-reveal");
+      featuredReveals.forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 40, opacity: 0 },
+          {
+            scrollTrigger: { trigger: el, start: "top 90%", toggleActions: "play none none none" },
+            y: 0,
+            opacity: 1,
+            duration: 0.85,
+            ease: "power3.out",
+          }
+        );
+      });
+
+      // Circular winner image — pop-in reveal + gentle scroll parallax drift
+      const winnerCircle = document.querySelector(".featured-winner-circle");
+      if (winnerCircle) {
+        gsap.fromTo(
+          winnerCircle,
+          { scale: 0.82, autoAlpha: 0, y: 30 },
+          {
+            scrollTrigger: { trigger: winnerCircle, start: "top 95%", toggleActions: "play none none none" },
+            scale: 1,
+            autoAlpha: 1,
+            y: 0,
+            duration: 1.1,
+            ease: "power3.out",
+          }
+        );
+        gsap.to(winnerCircle, {
+          yPercent: -10,
+          ease: "none",
+          scrollTrigger: { trigger: featuredSection, start: "top bottom", end: "bottom top", scrub: 1 },
+        });
+      }
+
+      // Inner winner image — slow zoom-out as the section scrolls through
+      const winnerImg = document.querySelector(".featured-winner-img");
+      if (winnerImg) {
+        gsap.fromTo(
+          winnerImg,
+          { scale: 1.28 },
+          {
+            scale: 1.1,
+            ease: "none",
+            scrollTrigger: { trigger: featuredSection, start: "top bottom", end: "center center", scrub: 1 },
+          }
+        );
+      }
+
+      // Large project image frame — clip-path wipe reveal
+      const projectFrame = document.querySelector(".featured-project-frame");
+      if (projectFrame) {
+        gsap.fromTo(
+          projectFrame,
+          { clipPath: "inset(0% 0% 100% 0%)", y: 60, autoAlpha: 0 },
+          {
+            scrollTrigger: { trigger: projectFrame, start: "top 86%", toggleActions: "play none none none" },
+            clipPath: "inset(0% 0% 0% 0%)",
+            y: 0,
+            autoAlpha: 1,
+            duration: 1.2,
+            ease: "power4.out",
+          }
+        );
+      }
+
+      // Inner project image — vertical parallax (scaled up to avoid edge gaps)
+      const projectImg = document.querySelector(".featured-project-img");
+      if (projectImg) {
+        gsap.fromTo(
+          projectImg,
+          { yPercent: -5, scale: 1.16 },
+          {
+            yPercent: 5,
+            ease: "none",
+            scrollTrigger: { trigger: projectFrame || projectImg, start: "top bottom", end: "bottom top", scrub: 1 },
+          }
+        );
+      }
+
+      // "ROAS" watermark — slide in from the right
+      const roasWatermark = document.querySelector(".featured-roas-watermark");
+      if (roasWatermark) {
+        gsap.fromTo(
+          roasWatermark,
+          { x: 70, autoAlpha: 0 },
+          {
+            scrollTrigger: { trigger: roasWatermark, start: "top 94%", toggleActions: "play none none none" },
+            x: 0,
+            autoAlpha: 1,
+            duration: 1,
+            ease: "power3.out",
+          }
+        );
+      }
+    }
+
+    // 7.9. Why Choose Us — card columns slide in toward the gallery; gallery pops in
+    const whyGrid = document.querySelector(".why-us-grid");
+    if (whyGrid) {
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const leftCards = gsap.utils.toArray<HTMLElement>(".why-col-left .why-card");
+      const rightCards = gsap.utils.toArray<HTMLElement>(".why-col-right .why-card");
+      const gallery = document.querySelector(".why-gallery");
+
+      if (prefersReduced) {
+        // Reveal everything instantly — markup ships with opacity-0
+        gsap.set([...leftCards, ...rightCards], { opacity: 1, x: 0 });
+        if (gallery) gsap.set(gallery, { opacity: 1, scale: 1 });
+      } else {
+        if (gallery) {
+          gsap.fromTo(
+            gallery,
+            { autoAlpha: 0, scale: 0.92 },
+            {
+              scrollTrigger: { trigger: whyGrid, start: "top 80%", toggleActions: "play none none none" },
+              autoAlpha: 1,
+              scale: 1,
+              duration: 1,
+              ease: "power3.out",
+            }
+          );
+        }
+
+        // Directional reveal toward the centerpiece; clear transform after so the
+        // CSS hover-lift keeps working
+        const animateGroup = (cards: HTMLElement[], fromX: number) => {
+          if (cards.length === 0) return;
+          gsap.fromTo(
+            cards,
+            { x: fromX, opacity: 0 },
+            {
+              scrollTrigger: { trigger: whyGrid, start: "top 75%", toggleActions: "play none none none" },
+              x: 0,
+              opacity: 1,
+              duration: 0.8,
+              stagger: 0.12,
+              ease: "power3.out",
+              onComplete: () => gsap.set(cards, { clearProps: "transform" }),
+            }
+          );
+        };
+        animateGroup(leftCards, -50);
+        animateGroup(rightCards, 50);
+      }
+    }
+
+    // 7.95. Quality Banner — text rise, capability-card slide-in, progress-bar fill
+    const qualitySection = document.querySelector(".quality-banner-topography");
+    if (qualitySection) {
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const qbReveals = gsap.utils.toArray<HTMLElement>(".quality-banner-topography .quality-reveal");
+      const qbCards = gsap.utils.toArray<HTMLElement>(".quality-card");
+      const qbBars = gsap.utils.toArray<HTMLElement>(".quality-bar-fill");
+
+      if (prefersReduced) {
+        // Markup ships with opacity-0 / unscaled bars — reveal everything instantly
+        gsap.set([...qbReveals, ...qbCards], { opacity: 1, x: 0, y: 0 });
+        gsap.set(qbBars, { scaleX: 1 });
+      } else {
+        // Left column — staggered rise establishes the claim before the proof
+        if (qbReveals.length > 0) {
+          gsap.fromTo(
+            qbReveals,
+            { y: 40, opacity: 0 },
+            {
+              scrollTrigger: { trigger: qualitySection, start: "top 72%", toggleActions: "play none none none" },
+              y: 0,
+              opacity: 1,
+              duration: 0.8,
+              stagger: 0.12,
+              ease: "power3.out",
+            }
+          );
+        }
+
+        // Capability cards — slide in from the right, each on its own trigger
+        qbCards.forEach((card) => {
+          gsap.fromTo(
+            card,
+            { x: 60, opacity: 0 },
+            {
+              scrollTrigger: { trigger: card, start: "top 88%", toggleActions: "play none none none" },
+              x: 0,
+              opacity: 1,
+              duration: 0.8,
+              ease: "power3.out",
+            }
+          );
+        });
+
+        // Progress bars — fill from empty (scaleX is GPU-friendly vs animating width)
+        qbBars.forEach((bar) => {
+          gsap.fromTo(
+            bar,
+            { scaleX: 0 },
+            {
+              scrollTrigger: { trigger: bar, start: "top 92%", toggleActions: "play none none none" },
+              scaleX: 1,
+              duration: 1.2,
+              ease: "power2.out",
+            }
+          );
+        });
+      }
+    }
+
+    // 7.97. Experience Section — card/image reveals + Impressions bar clip-wipes
+    const expSection = document.querySelector(".experience-section");
+    if (expSection) {
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const expReveals = gsap.utils.toArray<HTMLElement>(".experience-section .exp-reveal");
+      const expBars = gsap.utils.toArray<HTMLElement>(".experience-section .exp-bar");
+
+      if (prefersReduced) {
+        gsap.set(expReveals, { opacity: 1, y: 0 });
+        gsap.set(expBars, { clipPath: "none" });
+      } else {
+        // Image + stat cards rise into place, each on its own trigger
+        expReveals.forEach((el) => {
+          gsap.fromTo(
+            el,
+            { y: 44, opacity: 0 },
+            {
+              scrollTrigger: { trigger: el, start: "top 88%", toggleActions: "play none none none" },
+              y: 0,
+              opacity: 1,
+              duration: 0.85,
+              ease: "power3.out",
+            }
+          );
+        });
+
+        // Impressions bars wipe in left→right (clip-path keeps inner text crisp)
+        expBars.forEach((bar, i) => {
+          gsap.fromTo(
+            bar,
+            { clipPath: "inset(0 100% 0 0)" },
+            {
+              scrollTrigger: { trigger: bar, start: "top 90%", toggleActions: "play none none none" },
+              clipPath: "inset(0 0% 0 0)",
+              duration: 0.9,
+              delay: i * 0.08,
+              ease: "power3.out",
+            }
+          );
+        });
+      }
     }
 
     // 8. 3D Tilt Card Effect
@@ -587,6 +951,28 @@ export default function GsapInitializer() {
           ease: "none",
         }
       );
+    }
+
+    // 9.6. Footer — columns rise in as the footer enters view
+    const footerReveals = gsap.utils.toArray<HTMLElement>(".footer-reveal");
+    if (footerReveals.length > 0) {
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReduced) {
+        gsap.set(footerReveals, { opacity: 1, y: 0 });
+      } else {
+        gsap.fromTo(
+          footerReveals,
+          { y: 40, opacity: 0 },
+          {
+            scrollTrigger: { trigger: "footer", start: "top 80%", toggleActions: "play none none none" },
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.12,
+            ease: "power3.out",
+          }
+        );
+      }
     }
 
     // 10. Hero Load-Based Entrance Animations (Play after preloader actually finishes)
@@ -705,6 +1091,7 @@ export default function GsapInitializer() {
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      bubbleLoops.forEach((loop) => loop.kill());
       window.removeEventListener("preloaderDone", onPreloaderDone);
       clearTimeout(heroFallbackTimer);
       if (heroSection) {

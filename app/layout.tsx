@@ -4,6 +4,7 @@ import "./globals.css";
 import Preloader from "./components/Preloader";
 import CustomCursor from "./components/CustomCursor";
 import GsapInitializer from "./components/GsapInitializer";
+import SmoothScroll from "./components/SmoothScroll";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-heading",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <Preloader />
         <CustomCursor />
         <GsapInitializer />
+        <SmoothScroll />
         {children}
       </body>
     </html>

@@ -1,6 +1,24 @@
 @import "tailwindcss";
 @import "tailwindcss";
 
+/* Lenis smooth-scroll base styles (html gets .lenis .lenis-smooth at runtime) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 :root {
   /* Roas Haus Premium Color Palette */
   --roas-base: #204E3D; /* Neon Electric Green */
@@ -494,45 +512,192 @@ select:focus {
   100% { transform: translateX(-50%); }
 }
 
+/* Featured Wins — interactive polish (transform owned by GSAP, so hover uses shadow only) */
+.featured-winner-circle {
+  will-change: transform, opacity;
+  box-shadow: 0 30px 70px rgba(6, 9, 7, 0.35);
+}
+
+.featured-winner-img {
+  will-change: transform;
+}
+
+.featured-project-frame {
+  will-change: clip-path, transform;
+  box-shadow: 0 26px 65px rgba(6, 9, 7, 0.3);
+  transition: box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.featured-project-frame:hover {
+  box-shadow: 0 42px 95px rgba(10, 61, 43, 0.38);
+}
+
+.featured-project-img {
+  will-change: transform;
+}
+
 .why-card {
+  position: relative;
+  overflow: hidden;
   border: 1px solid rgba(11, 54, 33, 0.08);
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(18px);
-  border-radius: 18px;
-  padding: 28px 30px;
-  box-shadow: 0 22px 55px rgba(8, 14, 11, 0.08);
-  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-              border-color 0.35s ease,
-              box-shadow 0.35s ease;
+  border-radius: 20px;
+  padding: 26px 28px;
+  box-shadow: 0 22px 55px rgba(8, 14, 11, 0.07);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.4s ease,
+              box-shadow 0.4s ease;
   z-index: 1;
+}
+
+/* Bottom accent bar — wipes in on hover (matches .service-card-wrapper) */
+.why-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--roas-base);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .why-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(32, 78, 61, 0.3);
-  box-shadow: 0 30px 70px rgba(32, 78, 61, 0.11);
+  border-color: rgba(32, 78, 61, 0.32);
+  box-shadow: 0 34px 70px rgba(32, 78, 61, 0.13);
 }
 
+.why-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Big number watermark, clipped into the card corner toward the gallery */
 .why-card-number {
-  z-index: -1;
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: rgba(10, 61, 43, 0.07);
   pointer-events: none;
+  user-select: none;
+  transition: color 0.4s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Right-column cards mirror the watermark to the left edge */
+.why-card--rev .why-card-number {
+  right: auto;
+  left: 18px;
+}
+
+.why-card:hover .why-card-number {
+  color: rgba(32, 78, 61, 0.16);
+  transform: translateY(-2px);
+}
+
+.why-card-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.why-card-title {
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: 17px;
+  line-height: 1.25;
+  color: var(--roas-black);
+  transition: color 0.35s ease;
+}
+
+.why-card:hover .why-card-title {
+  color: var(--roas-dark);
+}
+
+.why-card-desc {
+  margin-top: 10px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(61, 79, 70, 0.8);
 }
 
 .why-icon {
   width: 48px;
   height: 48px;
-  border-radius: 11px;
-  background: rgba(11, 54, 33, 0.055);
+  border-radius: 13px;
+  background: rgba(11, 54, 33, 0.06);
   color: var(--roas-dark);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: background-color 0.4s ease,
+              color 0.4s ease,
+              transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.why-card:hover .why-icon {
+  background: var(--roas-base);
+  color: var(--roas-white);
+  transform: rotate(-6deg) scale(1.06);
 }
 
 .why-icon svg {
   width: 23px;
   height: 23px;
+}
+
+/* Center gallery — framed marquee with a floating glass stat badge */
+.why-gallery-frame {
+  position: relative;
+}
+
+.why-gallery-badge {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 28px;
+  border-radius: 18px;
+  background: rgba(247, 242, 231, 0.72);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 50px rgba(8, 14, 11, 0.18);
+  text-align: center;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.why-gallery-badge-value {
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--roas-dark);
+}
+
+.why-gallery-badge-label {
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(61, 79, 70, 0.7);
 }
 
 .why-marquee {
@@ -590,6 +755,13 @@ select:focus {
 @media (max-width: 1023px) {
   .why-card {
     max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-image-track-up,
+  .why-image-track-down {
+    animation: none;
   }
 }
 
@@ -817,6 +989,55 @@ select:focus {
     repeating-radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.026) 0 2px, transparent 2px 34px);
   background-size: 360px 260px, 430px 300px, 390px 280px, 520px 360px;
   background-position: 0 0, 100px 24px, 40px 120px, center;
+}
+
+/* Quality Banner — animated gradient headline (green shine sweep) */
+.quality-headline-grad {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 32%,
+    #34d399 48%,
+    #00A361 60%,
+    #ffffff 82%,
+    #ffffff 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: quality-shine 6.5s ease-in-out infinite;
+}
+
+@keyframes quality-shine {
+  0%, 100% { background-position: 140% 50%; }
+  50% { background-position: -40% 50%; }
+}
+
+/* Quality Banner — progress bar fill (GSAP owns scaleX) */
+.quality-bar-fill {
+  transform-origin: left center;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quality-headline-grad {
+    animation: none;
+    background-position: 50% 50%;
+  }
+}
+
+/* Experience — Impressions bars wipe in left→right (GSAP animates clip-path) */
+.exp-bar {
+  clip-path: inset(0 100% 0 0);
+  will-change: clip-path;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exp-bar {
+    clip-path: none;
+  }
 }
 
 /* Slogan Text Transition */
@@ -1097,12 +1318,12 @@ input[type=range]::-webkit-slider-thumb:hover {
 
 @media (min-width: 1024px) {
   .services-stack-pin {
-    min-height: min(760px, calc(100vh - 8rem));
+    min-height: min(640px, calc(100vh - 9rem));
   }
 
   .services-card-stack {
     position: relative;
-    height: min(760px, calc(100vh - 8rem));
+    height: min(640px, calc(100vh - 9rem));
     padding-bottom: 0;
   }
 
@@ -1198,13 +1419,47 @@ input[type=range]::-webkit-slider-thumb:hover {
 }
 
 .footer-link {
-  display: inline-block;
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  color: rgba(255, 255, 255, 0.82);
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), color 0.3s ease;
+}
+
+/* Animated underline reveal — slides in from the left on hover */
+.footer-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .footer-link:hover {
-  transform: translateX(6px);
-  color: var(--roas-base);
+  transform: translateX(4px);
+  color: #ffffff;
+}
+
+.footer-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Footer column eyebrow labels */
+.footer-eyebrow {
+  display: block;
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 18px;
 }
 
 .footer-platform-badge {
