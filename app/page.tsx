@@ -298,7 +298,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="h-28 w-full bg-gradient-to-b from-[#060907] to-[#F4F8F5] pointer-events-none mt-10" />
         </section>
 
         {/* =========================================================================
@@ -474,8 +473,8 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="lg:col-span-4 order-first lg:order-none">
-                <div className="why-marquee mx-auto h-[560px] w-full max-w-[360px] overflow-hidden">
+              <div className="lg:col-span-4 order-first lg:order-none -mx-4 lg:-mx-8 z-10 relative">
+                <div className="why-marquee mx-auto h-[560px] w-full overflow-hidden">
                   <div className="grid grid-cols-2 gap-3 h-full w-full">
                     {[0, 1].map((column) => (
                       <div key={column} className="relative h-full min-w-0 overflow-hidden rounded-sm">
@@ -944,6 +943,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
           </div>
         </section>
 
